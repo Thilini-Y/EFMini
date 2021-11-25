@@ -4,9 +4,14 @@
         <name>Cenium.Reservations.Data</name>
     </assembly>
     <members>
-        <member name="T:Cenium.Reservations.Data.NamespaceDoc">
+        <member name="T:Cenium.Reservations.Data.Reservation">
             <summary>
-            Contains entity classes that comprise the data access layer of the component Reservations
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Data.Reservation.Name">
+            <summary>
+            Not mapped queryable field to query by conference group number.
             </summary>
         </member>
         <member name="P:Cenium.Reservations.Data.Reservation.TenantId">
@@ -17,6 +22,11 @@
         <member name="P:Cenium.Reservations.Data.Reservation.RowVersion">
             <summary>
             Concurrency control version number
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Data.NamespaceDoc">
+            <summary>
+            Contains entity classes that comprise the data access layer of the component Reservations
             </summary>
         </member>
         <member name="T:Cenium.Reservations.Data.ReservationsEntitiesContext">

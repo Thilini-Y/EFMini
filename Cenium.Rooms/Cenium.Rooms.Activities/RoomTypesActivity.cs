@@ -134,6 +134,7 @@ namespace Cenium.Rooms.Activities
         }
 
 
+
         /// <summary>
         /// Deletes a RoomType instance from the data store
         /// </summary>

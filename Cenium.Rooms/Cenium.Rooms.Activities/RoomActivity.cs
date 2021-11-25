@@ -131,6 +131,41 @@ namespace Cenium.Rooms.Activities
             return Logger.TraceMethodExit(GetFromDatastore(room.RoomId)) as Room;
         }
 
+        [ActivityMethod("ChangeStatus", MethodType.Invoke, IsDefault = true)]
+        [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
+        public void ChangeStatus(Room room)
+        {
+            Logger.TraceMethodEnter(room);
+
+            var roomStatus = room.RoomStatus;
+
+            room = _ctx.Rooms.ReadOnlyQuery().Where(x => x.RoomId == room.RoomId).FirstOrDefault();
+
+            room.RoomStatus = roomStatus;
+
+            room = _ctx.Rooms.Modify(room);
+            _ctx.SaveChanges();
+
+            
+        }
+
+        [ActivityMethod("Clean", MethodType.Invoke, IsDefault = true)]
+        [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
+        public void Clean(Room room)
+        {
+            Logger.TraceMethodEnter(room);
+
+            room = _ctx.Rooms.ReadOnlyQuery().Where(x => x.RoomId == room.RoomId).FirstOrDefault();
+
+            room.RoomStatus = "Clean";
+
+            room = _ctx.Rooms.Modify(room);
+            _ctx.SaveChanges();
+
+            
+        }
+
+
 
         /// <summary>
         /// Deletes a Room instance from the data store

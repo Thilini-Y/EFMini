@@ -23,6 +23,8 @@ using Cenium.Framework.Core.Attributes;
 using Cenium.Framework.Logging;
 using Cenium.Reservations.Data;
 using Cenium.Framework.Security;
+using Cenium.Reservations.Activities.Helpers.Contacts;
+using Cenium.Reservations.Activities.Helpers.Room;
 
 namespace Cenium.Reservations.Activities
 {
@@ -71,6 +73,8 @@ namespace Cenium.Reservations.Activities
 
             var result = _ctx.Reservations.ReadOnlyQuery().OrderBy(p => p.ReservationId);
 
+
+
             return Logger.TraceMethodExit(result) as IEnumerable<Reservation>;
         }
 
@@ -88,6 +92,10 @@ namespace Cenium.Reservations.Activities
 
             var result = _ctx.Reservations.FindByKeys(reservationId);
 
+            ContactProxy contact_proxy = new ContactProxy(ContactHelper.CreateContactProxy());
+            var contactResult = ContactHelper.GetContactDetailsById(result.ContactId);
+            result.Name = contactResult.Name;
+            result.IdNumber = contactResult.IdNumber;
             return Logger.TraceMethodExit(result) as Reservation;
         }
 
@@ -120,6 +128,77 @@ namespace Cenium.Reservations.Activities
         public Cenium.Reservations.Data.Reservation Update(Reservation reservation)
         {
             Logger.TraceMethodEnter(reservation);
+
+            reservation = _ctx.Reservations.Modify(reservation);
+            _ctx.SaveChanges();
+
+            return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
+        }
+
+
+        /// <summary>
+        /// Updates a Reservation instance in the data store
+        /// </summary>
+        /// <param name="reservation">The instance to update</param>
+        /// <returns>The updated instance</returns>
+        [ActivityMethod("CheckIn", MethodType.Update, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Write)]
+        public Cenium.Reservations.Data.Reservation CheckIn(Reservation reservation)
+        {
+            Logger.TraceMethodEnter(reservation);
+
+            reservation.Status = "CheckedIn";
+
+            reservation = _ctx.Reservations.Modify(reservation);
+            _ctx.SaveChanges();
+
+            RoomProxy room_proxy = new RoomProxy();
+            room_proxy.RoomId = reservation.RoomId;
+            room_proxy.RoomStatus = "Occupied";
+
+            RoomHelper.ChangeRoomStatus(room_proxy);
+
+            return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
+        }
+
+
+        /// <summary>
+        /// Updates a Reservation instance in the data store
+        /// </summary>
+        /// <param name="reservation">The instance to update</param>
+        /// <returns>The updated instance</returns>
+        [ActivityMethod("CheckOut", MethodType.Update, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Write)]
+        public Cenium.Reservations.Data.Reservation CheckOut(Reservation reservation)
+        {
+            Logger.TraceMethodEnter(reservation);
+
+            reservation.Status = "CheckedOut";
+
+            reservation = _ctx.Reservations.Modify(reservation);
+            _ctx.SaveChanges();
+
+            RoomProxy room_proxy = new RoomProxy();
+            room_proxy.RoomId = reservation.RoomId;
+            room_proxy.RoomStatus = "Dirty";
+
+            RoomHelper.ChangeRoomStatus(room_proxy);
+
+            return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
+        }
+
+        /// <summary>
+        /// Updates a Reservation instance in the data store
+        /// </summary>
+        /// <param name="reservation">The instance to update</param>
+        /// <returns>The updated instance</returns>
+        [ActivityMethod("Cancel", MethodType.Update, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Write)]
+        public Cenium.Reservations.Data.Reservation Cancel(Reservation reservation)
+        {
+            Logger.TraceMethodEnter(reservation);
+
+            reservation.Status = "Cancel";
 
             reservation = _ctx.Reservations.Modify(reservation);
             _ctx.SaveChanges();

@@ -4,6 +4,65 @@
         <name>Cenium.Reservations.Activities</name>
     </assembly>
     <members>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Contacts.ContactHelper">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.Contacts.ContactHelper.GetContactDetailsById(System.Int64)">
+            <summary>
+            Initializes a new instance of the ContactHelper class
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Contacts.ContactProxy">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.Contacts.ContactProxy.#ctor">
+            <summary>
+            Initializes a new instance of the ContactProxy class
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.ProxyWrapperBase">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.ProxyWrapperBase.#ctor(Cenium.Framework.Component.Interface.IEntityProxy)">
+            <summary>
+            Initializes a new instance of the ProxyWrapperBase class
+            </summary>
+            <param name="proxy">The entity proxy to wrap</param>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.ProxyWrapperBase.#ctor">
+            <summary>
+            Initializes a new instance of the ProxyWrapperBase class
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.ProxyWrapperBase.GetValue``1(System.String)">
+            <summary>
+            Gets a strongly typed value from the proxy entity, if the property is available
+            </summary>
+            <typeparam name="T">The value type</typeparam>
+            <param name="name">The name of the property</param>
+            <returns>The value of the property, or default(T) if the property does not exist, is the wrong type or is null</returns>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Room.RoomHelper">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Room.RoomProxy">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.Room.RoomProxy.#ctor">
+            <summary>
+            Initializes a new instance of the ContactProxy class
+            </summary>
+        </member>
         <member name="T:Cenium.Reservations.Activities.NamespaceDoc">
             <summary>
             Contains activity classes that comprise the application processing layer of the component Reservations
@@ -49,6 +108,27 @@
             <returns>The created instance</returns>
         </member>
         <member name="M:Cenium.Reservations.Activities.ReservationActivity.Update(Cenium.Reservations.Data.Reservation)">
+            <summary>
+            Updates a Reservation instance in the data store
+            </summary>
+            <param name="reservation">The instance to update</param>
+            <returns>The updated instance</returns>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.CheckIn(Cenium.Reservations.Data.Reservation)">
+            <summary>
+            Updates a Reservation instance in the data store
+            </summary>
+            <param name="reservation">The instance to update</param>
+            <returns>The updated instance</returns>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.CheckOut(Cenium.Reservations.Data.Reservation)">
+            <summary>
+            Updates a Reservation instance in the data store
+            </summary>
+            <param name="reservation">The instance to update</param>
+            <returns>The updated instance</returns>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.Cancel(Cenium.Reservations.Data.Reservation)">
             <summary>
             Updates a Reservation instance in the data store
             </summary>
