@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Rooms.Data", "Cenium
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Rooms.Activities", "Cenium.Rooms.Activities\Cenium.Rooms.Activities.csproj", "{FA9C9DAC-97E3-4FF6-90EF-7A2C27A350BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Rooms.Client.Windows", "Cenium.Rooms.Client.Windows\Cenium.Rooms.Client.Windows.csproj", "{C8EF648F-D7D1-48A5-AD78-1F4D53281910}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FA9C9DAC-97E3-4FF6-90EF-7A2C27A350BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA9C9DAC-97E3-4FF6-90EF-7A2C27A350BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA9C9DAC-97E3-4FF6-90EF-7A2C27A350BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8EF648F-D7D1-48A5-AD78-1F4D53281910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EF648F-D7D1-48A5-AD78-1F4D53281910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EF648F-D7D1-48A5-AD78-1F4D53281910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EF648F-D7D1-48A5-AD78-1F4D53281910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

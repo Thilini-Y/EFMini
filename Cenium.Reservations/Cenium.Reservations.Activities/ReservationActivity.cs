@@ -25,6 +25,7 @@ using Cenium.Reservations.Data;
 using Cenium.Framework.Security;
 using Cenium.Reservations.Activities.Helpers.Contacts;
 using Cenium.Reservations.Activities.Helpers.Room;
+using Cenium.Reservations.Activities.Entity;
 
 namespace Cenium.Reservations.Activities
 {
@@ -222,6 +223,34 @@ namespace Cenium.Reservations.Activities
 
             Logger.TraceMethodExit();
         }
+
+
+
+        /// <summary>
+        /// Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
+        /// </summary>
+        /// <param name="dates">The instance to delete</param>
+        /// <returns>A strongly type IEnumerable instance </returns>
+        [ActivityMethod("UnavailableRooms", MethodType.Invoke, IsDefault = true)]
+        [ActivityResult("Items")]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Read)]
+        public ReservationResults UnavailableRooms(DateEntity dates)
+        {
+            Logger.TraceMethodEnter(dates);
+
+            var result = _ctx.Reservations.ReadOnlyQuery().Where(x => x.CheckInDate > dates.CheckOutDate || x.CheckOutDate < dates.CheckInDate);
+            IEnumerable<Reservation> UnconflictReservations = result.ToList();
+
+            IEnumerable<Reservation> allReservations = Query().ToList();
+
+            IEnumerable<Reservation> ConflictReservations = allReservations.Where(p => !UnconflictReservations.Any(x => x.ReservationId == p.ReservationId)).ToList();
+
+            var reservationResult = new ReservationResults();
+            reservationResult.Items = ConflictReservations.ToList();
+            return Logger.TraceMethodExit( reservationResult);
+
+        }
+
 
 
         /// <summary>

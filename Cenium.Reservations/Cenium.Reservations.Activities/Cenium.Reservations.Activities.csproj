@@ -82,6 +82,8 @@
   <ItemGroup>
     <Compile Include="Component.cs" />
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Entity\ReservationResults.cs" />
+    <Compile Include="Entity\DateEntity.cs" />
     <Compile Include="Helpers\Contacts\ContactHelper.cs" />
     <Compile Include="Helpers\Contacts\ContactProxy.cs" />
     <Compile Include="Helpers\ProxyWrapperBase.cs" />

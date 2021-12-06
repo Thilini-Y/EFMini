@@ -20,3 +20,4 @@ D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\bin\Debug\EntityFramework.xm
 D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\bin\Debug\NLog.xml
 D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\obj\Debug\Cenium.Rooms.Data.dll
 D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\obj\Debug\Cenium.Rooms.Data.pdb
+D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\obj\Debug\Cenium.Rooms.Data.csprojResolveAssemblyReference.cache

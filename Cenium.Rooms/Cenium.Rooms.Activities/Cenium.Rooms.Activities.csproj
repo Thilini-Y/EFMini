@@ -82,7 +82,15 @@
   <ItemGroup>
     <Compile Include="Component.cs" />
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Entities\DateEntity.cs" />
+    <Compile Include="Entities\Reservation.cs" />
+    <Compile Include="Entities\ReservationResult.cs" />
     <Compile Include="FeaturesActivity.cs" />
+    <Compile Include="Helpers\ProxyWrapperBase.cs" />
+    <Compile Include="Helpers\Reservations\ReservationHelper.cs" />
+    <Compile Include="Helpers\Reservations\DateEntityProxy.cs" />
+    <Compile Include="Helpers\Reservations\ReservationProxy.cs" />
+    <Compile Include="Helpers\Reservations\ReservationResultProxy.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomActivity.cs" />
@@ -91,6 +99,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>SET DST_DIR=C:\inetpub\wwwroot\EFMini\bin

@@ -1,0 +1,1674 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cenium.EFT.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Cenium.EFT.Client.AdminTransactionForm">
+            <summary>
+            Form for executing administrative transactions
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.AdminTransactionForm.ButtonId">
+            <summary>
+            Terminal Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.AdminTransactionForm.ButtonTag">
+            <summary>
+            Button Tag.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.AdminTransactionForm.#ctor">
+            <summary>
+            Creates a new instase of AdminTransactionForm.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.AdminTransactionForm.PopulateForm(System.Collections.ObjectModel.Collection{System.Windows.Forms.Button})">
+            <summary>
+            Arranges the Buttons in <c>buttonList</c> on the form.
+            </summary>
+        </member>
+        <member name="F:Cenium.EFT.Client.AdminTransactionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.AdminTransactionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.AdminTransactionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Cenium.EFT.Client.AdminTransactionForm.title">
+            <summary>
+            Admin form title.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.ConfigDoesNotExistsException">
+            <summary>
+            Throws exception when configuration does not exist.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ConfigDoesNotExistsException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ConfigDoesNotExistsException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ConfigDoesNotExistsException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ConfigDoesNotExistsException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cenium.EFT.Client.ComPaymentService">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Dispose">
+            <summary>
+            Disposes ComPaymentService.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Finalize">
+            <summary>
+            Clean up ComPaymentService.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Dispose(System.Boolean)">
+            <summary>
+            Disposes ComPaymentService.
+            </summary>
+            <param name="disposing">Disposing.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Preauthorize(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.PreauthorizeToken(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.IncreaseAuthorizationAmount(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Settlement(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Purchase(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.PurchaseToken(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Refund(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.RefundToken(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Void(Cenium.EFT.Client.Request,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.ActivateGiftCard(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.DeactivateGiftCard(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GiftCardInquiry(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Administration(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Initialize(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Initialize(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.Initialize(System.String,System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.CreateToken">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.CreateTokenExtended(Cenium.EFT.Client.Request)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.CreateTokenRetention(System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.CreateTokenSilent(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.CreateTokenSilentRetention(System.String,System.String,System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetExceptionTransaction(Cenium.EFT.Client.PaymentService.Transaction,Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Money,System.Exception)">
+            <summary>
+            Gets
+            </summary>
+            <param name="transaction"></param>
+            <param name="cardInfo"></param>
+            <param name="amount"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetReferralTransaction(Cenium.EFT.Client.Request,Cenium.EFT.Client.PaymentService.Transaction,Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,System.Func{Cenium.EFT.Client.PaymentService.Token,Cenium.EFT.Client.PaymentService.CardInfo,System.String,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Transaction})">
+            <summary>
+            Handles referral transaction for server drivers.
+            Populates the Manual authorization form and gets the referral transaction using the supplied delegate.
+            </summary>
+            <param name="request">Transaction request.</param>
+            <param name="transaction">Transaction.</param>
+            <param name="cardInfo">CardInfo.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="configUsed">Config to use</param>
+            <param name="function">Delegate to call after user interaction.</param>
+            <returns>Transaction.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetReferralTransaction(Cenium.EFT.Client.Request,Cenium.EFT.Client.PaymentService.Transaction,Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,System.Func{Cenium.EFT.Client.PaymentService.Transaction,System.String,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,Cenium.EFT.Client.PaymentService.TransactionType,Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Transaction})">
+            <summary>
+            Handles referral transaction for client drivers.
+            Populates the Manual authorization form and gets the referral transaction using the supplied delegate.
+            </summary>
+            <param name="request">Transaction request.</param>
+            <param name="transaction">Transaction.</param>
+            <param name="cardInfo">CardInfo.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="configUsed">Config to use</param>
+            <param name="function">Delegate to call after user interaction.</param>
+            <returns>Transaction.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetDeviceMessage(Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Config)">
+            <summary>
+            Gets device message to use.
+            </summary>
+            <param name="cardInfo">Card info.</param>
+            <param name="configUsed">config used.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetConfig(Cenium.EFT.Client.PaymentService.CardInfo)">
+            <summary>
+            Gets proper config based on terminal name and user input information.
+            </summary>
+            <param name="cardInfo">Card Information.</param>
+            <returns>List of current configurations.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetConfig(System.String,System.String)">
+            <summary>
+            Gets proper config based on terminal name and vendor id.
+            </summary>
+            <param name="vendorId">Vendor id.</param>
+            <param name="userId">User id.</param>
+            <returns>List of current configurations.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.GetMerchantId(Cenium.EFT.Client.PaymentService.CardInfo)">
+            <summary>
+            Gets a merchant id based on terminal name, merchant type and user input information.
+            </summary>
+            <param name="cardInfo">Card information.</param>
+            <returns>Merchant id.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.MapRequestToCardInfo(Cenium.EFT.Client.Request)">
+            <summary>
+            Maps a Request object to a CardInfo object.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>CardInfo.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.MapRequestToMoney(Cenium.EFT.Client.Request)">
+            <summary>
+            Maps a Request object to a Money object.
+            Note that this function divides the amounts from Request to Money
+            by 100, as all amounts in Request are multiplied by 100.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Money.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.MapTransactionToTransInfo(Cenium.EFT.Client.PaymentService.Transaction)">
+            <summary>
+            Maps a Transaction object to a TransactionInfo object.
+            </summary>
+            <param name="transaction">Transaction.</param>
+            <returns>TransactionInfo.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.ValidateServiceObject">
+            <summary>
+            Validates if service object is usable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ComPaymentService.WriteReceiptToFile(System.String)">
+            <summary>
+            Writes a receipt string to a temporary file and returns the path to the file.
+            This should be used when the receipt length excedes the 1024 character limit of NAV.
+            </summary>
+            <param name="receiptString">Receipt string to write.</param>
+            <returns>Path to the temporary file.</returns>
+        </member>
+        <member name="P:Cenium.EFT.Client.ComPaymentService.IsRemoteSession">
+             <summary>
+             Indicates if we're running in a remote desktop session.
+             If we are, then you MUST disable animations and double buffering i.e. Pay your taxes!
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="T:Cenium.EFT.Client.Configurations">
+            <summary>
+            Helper class for fetching configuration
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.Configurations.FormBackColor">
+            <summary>
+            Back Color for Forms
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.CustomChannelFactoryConstantHelper">
+            <summary>
+            Provides constants in how the channel factory is created.
+            Provides the ability to not use any app.config file.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryConstantHelper.ApplyConfiguration(System.ServiceModel.Description.ServiceEndpoint,System.String,System.String,System.String)">
+            <summary>
+            Applies configuration on the channel to be created.
+            </summary>
+            <param name="serviceEndpoint">Service endpoint.</param>
+            <param name="configurationName">Configuration name of the endpoint.</param>
+            <param name="endpointAddress">Endpoint address.</param>
+            <param name="userPrincipalName">User principal name.</param>
+        </member>
+        <member name="F:Cenium.EFT.Client.MsrSwipeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.MsrSwipeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.MsrSwipeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Cenium.EFT.Client.OnScreenNumPad.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.OnScreenNumPad.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.OnScreenNumPad.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.ProcessIndicatorManager">
+            <summary>
+            Manages visibility of Process indicator dialog.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicatorManager.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the ProcessIndicatorManager class.
+            </summary>
+            <param name="showDialog">if true dialog will be visible else nothing will be dispayed.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicatorManager.Dispose">
+            <summary>
+            Disposes of unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicatorManager.Show(System.String)">
+            <summary>
+            Dispays the Process indicator dialog.
+            </summary>
+            <param name="messages">Messages to show. If empty string default messages will be used.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicatorManager.Hide">
+            <summary>
+            Hides the Process indicator dialog.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.CustomChannelFactory`1">
+            <summary>
+            A custom channel factory which takes in a path to a
+            custom configuration file
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactory`1.#ctor(System.String,System.String)">
+            <summary>
+            custom client channel constructor which
+            specifies an external configuration file
+            </summary>
+            <param name="endpointConfigurationName"></param>
+            <param name="configurationFileName"></param>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactory`1.#ctor(System.String,System.String,System.String)">
+            <summary>
+            custom client channel constructor which
+            specifies an external parameters, skip configuration file
+            </summary>
+            <param name="endpointConfigurationName"></param>
+            <param name="endpointAddress"></param>
+            <param name="userPrincipalName"></param>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactory`1.ApplyConfiguration(System.String)">
+            <summary>
+            overrides the ApplyConfiguration() method of the channel factory
+            to apply a new configuration file
+            </summary>
+            <param name="configurationName"></param>
+        </member>
+        <member name="T:Cenium.EFT.Client.CustomChannelFactoryHelper">
+            <summary>
+            Helper object for creating custom channel for wcf endpoint.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.ApplyConfiguration(System.String,System.ServiceModel.Description.ServiceEndpoint,System.String)">
+            <summary>
+            Applies configuration on the channel to be created.
+            </summary>
+            <param name="configurationFileName">Config file name.</param>
+            <param name="serviceEndpoint">Service endpoint.</param>
+            <param name="configurationName">Configuration name of the endpoint.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.LoadChannelBehaviors(System.ServiceModel.Description.ServiceEndpoint,System.String,System.ServiceModel.Configuration.ServiceModelSectionGroup)">
+            <summary>
+            Load the endpoint with the binding, address, behaviour etc. from the alternative config file
+            </summary>
+            <param name="serviceEndpoint"></param>
+            <param name="configurationName"></param>
+            <param name="serviceModeGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.GetGroup(System.String)">
+            <summary>
+            Load the ServiceModel section fron the config file
+            </summary>
+            <param name="configurationFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.LookupChannel(System.ServiceModel.Configuration.ServiceModelSectionGroup,System.String,System.String,System.Boolean)">
+            <summary>
+            Find the endpoint in the alternative config file that matches the required contract and configuration
+            </summary>
+            <param name="serviceModeGroup"></param>
+            <param name="configurationName"></param>
+            <param name="contractName"></param>
+            <param name="wildcard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.LookupBinding(System.ServiceModel.Configuration.ServiceModelSectionGroup,System.String,System.String)">
+            <summary>
+            Configures the binding for the selected endpoint
+            </summary>
+            <param name="group"></param>
+            <param name="bindingName"></param>
+            <param name="configurationName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.LookupIdentity(System.ServiceModel.Configuration.IdentityElement)">
+            <summary>
+            Gets the endpoint identity from the configuration file
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.LoadBehaviors(System.ServiceModel.Configuration.ServiceModelSectionGroup,System.String,System.ServiceModel.Description.ServiceEndpoint)">
+            <summary>
+            Adds the configured behavior to the selected endpoint
+            </summary>
+            <param name="group"></param>
+            <param name="behaviorConfiguration"></param>
+            <param name="serviceEndpoint"></param>
+        </member>
+        <member name="M:Cenium.EFT.Client.CustomChannelFactoryHelper.GetBinding(System.ServiceModel.Configuration.IBindingConfigurationElement)">
+            <summary>
+            Helper method to create the right binding depending on the configuration element
+            </summary>
+            <param name="configurationElement"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cenium.EFT.Client.DriverFactory">
+            <summary>
+            Driver factory object that provides access to
+            payment drivers.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.DriverFactory.Load(System.String)">
+            <summary>
+            Loads a client payment driver.
+            </summary>
+            <param name="vendorId">Vendor id.</param>
+            <returns>client payment driver.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.DriverFactory.List">
+            <summary>
+            Gets list of available client payment drivers.
+            </summary>
+            <returns>Client payment driver list.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.DriverFactory.SetDriversFolderPath(System.String)">
+            <summary>
+            Sets the drivers folder path.
+            </summary>
+            <param name="driversFolderPath">Drivers folder path.</param>
+        </member>
+        <member name="T:Cenium.EFT.Client.IComPaymentService">
+            <summary>
+            A COM object for the Cenium.EFT.Client module.
+            This object is used to enable access to client from
+            external application.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Preauthorize(Cenium.EFT.Client.Request)">
+            <summary>
+            Pre-authorizes a card.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.PreauthorizeToken(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Pre-authorizes a card, using a token.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token that is being preauthorized.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.IncreaseAuthorizationAmount(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Increases the authorization amount for the incoming token
+            by the incoming amount.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token that is being re-authorized.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+            <exception cref="T:Cenium.EFT.Client.TokenDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Settlement(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Settles an already pre-authorized card.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token that is being settled.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+            <exception cref="T:Cenium.EFT.Client.TokenDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Purchase(Cenium.EFT.Client.Request)">
+            <summary>
+            Purchase transaction.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.PurchaseToken(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Purchase transaction, using token.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token used in transaction.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Refund(Cenium.EFT.Client.Request)">
+            <summary>
+            Refund a card.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.RefundToken(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Refunds an existing transaction using token.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token used in transaction.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+            <exception cref="T:Cenium.EFT.Client.TokenDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Void(Cenium.EFT.Client.Request,System.String)">
+            <summary>
+            Voids/cancels a transaction using token or unique Id.
+            </summary>
+            <param name="request">Request information.</param>
+            <param name="tokenId">Token used in transaction.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+            <exception cref="T:Cenium.EFT.Client.TokenDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.ActivateGiftCard(Cenium.EFT.Client.Request)">
+            <summary>
+            Activates a gift card.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.DeactivateGiftCard(Cenium.EFT.Client.Request)">
+            <summary>
+            De-activates a gift card.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.GiftCardInquiry(Cenium.EFT.Client.Request)">
+            <summary>
+            Requests a balance inquiry for a gift card.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Administration(Cenium.EFT.Client.Request)">
+            <summary>
+            Starts an administrative transaction.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+            <exception cref="T:Cenium.EFT.Client.ConfigDoesNotExistsException"/>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Initialize(System.String)">
+            <summary>
+            Initializes the client com object.
+            </summary>
+            <param name="paymentServiceEndpointConfigName">Endpoint configuration name for Payment Service.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.CreateToken">
+            <summary>
+            Creates a new token.
+            </summary>
+            <returns>Transaction information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.CreateTokenRetention(System.DateTime)">
+            <summary>
+            Creates a new token.
+            </summary>
+            <param name="endDate">End date of cardholder retention period.</param>
+            <returns>Transaction information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.CreateTokenSilent(System.String,System.String)">
+            <summary>
+            Creates a new token.
+            The token will expire 6 months after the card expires.
+            </summary>
+            <param name="cardNumber">Card Number.</param>
+            <param name="expiryDate">Expiry Date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.CreateTokenSilentRetention(System.String,System.String,System.DateTime)">
+            <summary>
+            Creates a new token.
+            </summary>
+            <param name="cardNumber">Card Number</param>
+            <param name="expiryDate">Expiry Date.</param>
+            <param name="endDate">End date of cardholder retention period.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Initialize(System.String,System.String,System.String)">
+            <summary>
+            Initializes the client com object.
+            </summary>
+            <param name="paymentServiceEndpointConfigName">Endpoint configuration name for Payment Service.</param>
+            <param name="clientConfigurationFileName">Full path to client configuration file.</param>
+            <param name="driversFolderPath">Drivers folder path.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.CreateTokenExtended(Cenium.EFT.Client.Request)">
+            <summary>
+            Create token with support for external tokenization.
+            </summary>
+            <param name="request">Request information.</param>
+            <returns>Transaction information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.IComPaymentService.Initialize(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes the client com object.
+            The app.config file is not used when using this initialize method.
+            </summary>
+            <param name="paymentServiceEndpointConfigName">Endpoint configuration name for Payment Service.</param>
+            <param name="driversFolderPath">Drivers folder path.</param>
+            <param name="endpointAddress">Endpoint address to EFT server.</param>
+            <param name="userPrincipalName">User principal name used to connect to EFT server.</param>
+            <param name="appSettings">Application settings. Key/Value strings delimited with character: ^</param>
+        </member>
+        <member name="T:Cenium.EFT.Client.IRequest">
+            <summary>
+            Request information from external client application.
+            If the user cancels the transaction, then null is returned
+            in the transaction info.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.ClerkId">
+            <summary>
+            Clerk/Salesperson Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.ReferenceCode">
+            <summary>
+            Reference/document number.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.BusinessDate">
+            <summary>
+            Business date.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.SystemEntry">
+            <summary>
+            Indication if transaction is system entry.
+            If transaction is system entry then no user
+            interaction is used.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.Amount">
+            <summary>
+            Transaction amount * 100, as integer value.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.CurrencyCode">
+            <summary>
+            Currency Code.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.Description">
+            <summary>
+            Transaction description.
+            This will be used as the caption for the user
+            input form. If description is empty, then function
+            caption in settings file is used as caption in
+            user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TotalReservationValue">
+            <summary>
+            Total reservation value * 100, as integer.
+            Used as information in Client UserInput form.
+            Only used when merchant type is Lodging.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DepositedAmount">
+            <summary>
+            Already deposited amount * 100, as integer value.
+            Used as information in Client UserInput form.
+            Only used when merchant type is Lodging.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AuthorizedAmount">
+            <summary>
+            Already authorized amount * 100, as integer value.
+            Used in Client UserInput form.
+            Only used when merchant type is Lodging.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AdminCode">
+            <summary>
+            Administration code.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TaxAmount">
+            <summary>
+            Tax amount * 100, as integer value.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TipAmount">
+            <summary>
+            Tip amount * 100, as integer value.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AllowedToModifyAmount">
+            <summary>
+            Indicates if user is allowed to change amount
+            on user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.MerchantType">
+            <summary>
+            A constant value to indicate merchant type.
+            Values can be:
+            "None"
+            "Lodging"
+            "Epos"
+            "FoodAndBeverage"
+            "ElectronicCommerce"
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.LastCardDigits">
+            <summary>
+            Last 4 card digits when using token.
+            These digits will be displayed on the user input
+            form when using token.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.CardType">
+            <summary>
+            Type of card, possible values:
+            0 : None (Default)
+            1 : Credit Card
+            2 : Debit Card
+            3 : Gift Card
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.VendorId">
+            <summary>
+            Vendor Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.EndDate">
+            <summary>
+            End date of cardholder data retention period.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.UserId">
+            <summary>
+            User Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.PropertyCode">
+            <summary>
+            Hotel property code.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DisallowSwipe">
+            <summary>
+            Sets if swipe is disallowed
+            on user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DisallowManual">
+            <summary>
+            Sets if manual input is disallowed
+            on user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DisallowManualAuthorization">
+            <summary>
+            Sets if manual authorization is disallowed
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AmountDecimal">
+            <summary>
+            Transaction Amount as Decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TipAmountDecimal">
+            <summary>
+            Tip Amount as Decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TaxAmountDecimal">
+            <summary>
+            Tax amount as Decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TotalReservationValueDecimal">
+            <summary>
+            Total Reservation value as Decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DepositedAmountDecimal">
+            <summary>
+            Deposit amount as Decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AuthorizedAmountDecimal">
+            <summary>
+            Authorized amount as decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AmountString">
+            <summary>
+            Transaction amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TipAmountString">
+            <summary>
+            Tip amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TaxAmountString">
+            <summary>
+            Tax amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.TotalReservationValueString">
+            <summary>
+            Total reservation value as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DepositedAmountString">
+            <summary>
+            Deposit amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AuthorizedAmountString">
+            <summary>
+            Authorized amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.ReservationNumber">
+            <summary>
+            PMS Reservation Number.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.FolioNumber">
+            <summary>
+            PMS Folio Number.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.ArrivalDate">
+            <summary>
+            PMS Arrival Date.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.DepartureDate">
+            <summary>
+            PMS Departure Date.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.GuestName">
+            <summary>
+            Guest Name.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.RoomRate">
+            <summary>
+            Room Rate.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.ExtraCharges">
+            <summary>
+            Indicates that the PMS system is processing an extra charge.
+            If supported the driver will display GUI allowing the user to pick type of charges according to processors specs.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.NoShow">
+            <summary>
+            Indication that the PMS system is processing a NoShow fee.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.AdvancedDeposit">
+            <summary>
+            Indication that the PMS system is processing an advanced deposit.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.IRequest.Terminal">
+            <summary>
+            Terminal Name
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.ITransactionInfo">
+            <summary>
+            Transaction information.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.Approved">
+            <summary>
+            Indication if transaction was approved.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.Id">
+            <summary>
+            Id of transaction in Cenium.EFT database.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.Amount">
+            <summary>
+            Transaction amount * 100, as integer.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.TokenId">
+            <summary>
+            Token Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.ResponseCode">
+            <summary>
+            Response code from EFT Vendor.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.RemainingAmount">
+            <summary>
+            If partial amount is processed by EFT vendor, then
+            the remaining amount * 100, as integer, is indicated in this field.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.AuthorizationId">
+            <summary>
+            Authorization Id from EFT Vendor.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.CustomerReceipt">
+            <summary>
+            Holds customer receipt text.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.MerchantReceipt">
+            <summary>
+            Holds merchant receipt text.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.VendorId">
+            <summary>
+            Vendor id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.CardTypeCode">
+            <summary>
+            Card type code.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.MerchantId">
+            <summary>
+            Merchant Id.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.UserMessage">
+            <summary>
+            Indication if a message from EFT vendor
+            should appear to user when processing transaction.
+            Also used for error messages, when ErrorOccured is true.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.ErrorOccurred">
+            <summary>
+            Indicates if error occured from EFT vendor.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.ErrorCode">
+            <summary>
+            Error code from EFT vendor.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.Voided">
+            <summary>
+            Indicates if transaction was voided.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.LastCardDigits">
+            <summary>
+            Last 4 card digits.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.Swiped">
+            <summary>
+            Indicates if card was swiped, or manual input.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.CardType">
+            <summary>
+            Type of card, possible values:
+            0 : Credit Card
+            1 : Debit Card
+            2 : Gift Card
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.TransactionType">
+            <summary>
+            Type of transaction.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ITransactionInfo.MerchantReceiptPart(System.Int32)">
+            <summary>
+            Returns merchant receipt in chunks of 1024 characters.
+            </summary>
+            <param name="partNumber">Part index.</param>
+            <returns>Part of receipt.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.ITransactionInfo.CustomerReceiptPart(System.Int32)">
+            <summary>
+            Returns customer receipt in chunks of 1024 characters.
+            </summary>
+            <param name="partNumber">Part index.</param>
+            <returns>Part of receipt.</returns>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.TipAmount">
+            <summary>
+            Transaction tip amount * 100, as integer.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.AmountDecimal">
+            <summary>
+            Transaction amount as decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.RemainingAmountDecimal">
+            <summary>
+            Remaining amount as decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.TipAmountDecimal">
+            <summary>
+            Tip amount as decimal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.AmountString">
+            <summary>
+            Transaction amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.RemainingAmountString">
+            <summary>
+            Remaining amount as string
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ITransactionInfo.TipAmountString">
+            <summary>
+            Tip amount as string
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.ManualAuthorization">
+            <summary>
+            This form is used for offline manual
+            authorization.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.ManualAuthorization.AuthorizationNumber">
+            <summary>
+            Authorization number indicated by user.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ManualAuthorization.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ManualAuthorization.SetCardInfo(Cenium.EFT.Client.PaymentService.CardInfo,System.Decimal)">
+            <summary>
+            Sets card and amount information to form.
+            </summary>
+            <param name="cardInfo">Card information.</param>
+            <param name="amount">Amount.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ManualAuthorization.SetMessageText(System.String)">
+            <summary>
+            Sets the message text to user.
+            </summary>
+            <param name="messageText">Message text.</param>
+        </member>
+        <member name="F:Cenium.EFT.Client.ManualAuthorization.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ManualAuthorization.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ManualAuthorization.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.PaymentDriver">
+            <summary>
+            Abstract class for payment driver.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.PaymentDriver.Name">
+            <summary>
+            Name of driver.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.PaymentDriver.ExecuteTransaction(Cenium.EFT.Client.PaymentService.CardInfo,System.String,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,Cenium.EFT.Client.PaymentService.TransactionType)">
+            <summary>
+            Executes a transaction using card information directly
+            from user input.
+            </summary>
+            <param name="cardInfo">Card information.</param>
+            <param name="description">Transaction description.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="config">Current configuration.</param>
+            <param name="transactionType">Transaction type.</param>
+            <returns>Transaction information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.PaymentDriver.ExecuteTransaction(Cenium.EFT.Client.PaymentService.Transaction,System.String,Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,Cenium.EFT.Client.PaymentService.TransactionType,Cenium.EFT.Client.PaymentService.CardInfo)">
+            <summary>
+            Executes a transaction using a token.
+            </summary>
+            <param name="transaction">Transaction information.</param>
+            <param name="description">Transaction description.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="config">Current configuration.</param>
+            <param name="transactionType">Transaction type.</param>
+            <param name="cardInfo">Card Information.</param>
+            <returns>Transaction information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.PaymentDriver.GetCardInfo(Cenium.EFT.Client.PaymentService.Money,Cenium.EFT.Client.PaymentService.Config,System.String,Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.TransactionType)">
+            <summary>
+            Gets card info from device. This function only needs to
+            be implemented in the driver if specific functionality needs
+            to be made for communicating with an external device.
+            If this is implemented, then DriverType configuration
+            needs to include the Device option.
+            </summary>
+            <param name="amount">Transaction amount.</param>
+            <param name="config">Current configuration.</param>
+            <param name="description">Transaction description.</param>
+            <param name="cardInfo">Card Information.</param>
+            <returns>Card information.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.PaymentDriver.CreateToken(Cenium.EFT.Client.PaymentService.CardInfo,Cenium.EFT.Client.PaymentService.Config)">
+            <summary>
+            Creates a token using external tokenization providor.
+            </summary>
+            <param name="cardInfo">Card Information.</param>
+            <param name="config">Current configuration.</param>
+            <returns>Token.</returns>
+        </member>
+        <member name="T:Cenium.EFT.Client.ProcessIndicator">
+            <summary>
+            Form that displays a process indicator to user.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicator.#ctor(System.String)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="deviceMessage">Device message.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicator.ShowDialog(System.String)">
+            <summary>
+            Shows the form as Dialog.
+            </summary>
+            <param name="messages">Messages.</param>
+            <returns>Dialog Results.</returns>
+        </member>
+        <member name="F:Cenium.EFT.Client.ProcessIndicator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.ProcessIndicator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.Request">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.ClerkId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.ReferenceCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.BusinessDate">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.SystemEntry">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.Amount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.CurrencyCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.Description">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TotalReservationValue">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DepositedAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AuthorizedAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AdminCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TaxAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TipAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AllowedToModifyAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.MerchantType">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.LastCardDigits">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.CardType">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.VendorId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.EndDate">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.UserId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.PropertyCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DisallowSwipe">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DisallowManual">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DisallowManualAuthorization">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.Terminal">
+            <summary>
+             Terminal
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TipAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TaxAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TotalReservationValueDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DepositedAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AuthorizedAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TipAmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TaxAmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.TotalReservationValueString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DepositedAmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AuthorizedAmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.ReservationNumber">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.FolioNumber">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.ArrivalDate">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.DepartureDate">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.GuestName">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.RoomRate">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.ExtraCharges">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.NoShow">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.Request.AdvancedDeposit">
+            <inheritdoc />
+        </member>
+        <member name="T:Cenium.EFT.Client.TokenDoesNotExistsException">
+            <summary>
+            Throws exception when trying to get a token which does not exist.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.TokenDoesNotExistsException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.TokenDoesNotExistsException.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.TokenDoesNotExistsException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.TokenDoesNotExistsException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cenium.EFT.Client.TransactionInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.Approved">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.Amount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.TokenId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.ResponseCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.RemainingAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.AuthorizationId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.CustomerReceipt">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.MerchantReceipt">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.VendorId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.CardTypeCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.MerchantId">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.UserMessage">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.ErrorOccurred">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.ErrorCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.Voided">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.LastCardDigits">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.Swiped">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.CardType">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.TransactionType">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.TransactionInfo.MerchantReceiptPart(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cenium.EFT.Client.TransactionInfo.CustomerReceiptPart(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.TipAmount">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.AmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.RemainingAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.TipAmountDecimal">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.AmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.RemainingAmountString">
+            <inheritdoc />
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionInfo.TipAmountString">
+            <inheritdoc />
+        </member>
+        <member name="T:Cenium.EFT.Client.TransactionTypes">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.ActivateGiftCardCaption">
+            <summary>
+              Looks up a localized string similar to Activate Gift Card.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.CreateTokenCaption">
+            <summary>
+              Looks up a localized string similar to Create Token.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.DeActivateGiftCardCaption">
+            <summary>
+              Looks up a localized string similar to Deactivate Gift Card.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.GiftCardInquiryCaption">
+            <summary>
+              Looks up a localized string similar to Gift Card Inquiry.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.IncreaseAuthorizationCaption">
+            <summary>
+              Looks up a localized string similar to Increase Authorization.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.OfflinePreauthorizationCaption">
+            <summary>
+              Looks up a localized string similar to Offline Preauthorization.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.OfflineSettlementCaption">
+            <summary>
+              Looks up a localized string similar to Offline Settlement.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.PreauthorizationCaption">
+            <summary>
+              Looks up a localized string similar to Preauthorization.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.PurchaseCaption">
+            <summary>
+              Looks up a localized string similar to Purchase.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.RefundCaption">
+            <summary>
+              Looks up a localized string similar to Refund.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.SettlementCaption">
+            <summary>
+              Looks up a localized string similar to Settlement.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.TransactionTypes.VoidCaption">
+            <summary>
+              Looks up a localized string similar to Void.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.UserInput">
+            <summary>
+            The purpose of this form is to get cardholder data, amount
+            and related information from the user that will be used in
+            the current EFT transaction.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.UserInput.CardType">
+            <summary>
+            Card Type property.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.UserInput.UserInputProperty">
+            <summary>
+            User Input property.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.UserInput.DisallowSwipe">
+            <summary>
+            Gets or sets if swipe is allowed
+            on user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.UserInput.DisallowManual">
+            <summary>
+            Gets or sets if manual input is
+            allowed on user input form.
+            </summary>
+        </member>
+        <member name="P:Cenium.EFT.Client.UserInput.ConfigUsed">
+            <summary>
+            Returns the config that should be used,
+            based on what user selects in the form.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.UserInput.#ctor(Cenium.EFT.Client.PaymentService.Config[])">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="config">Configuration parameters.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.UserInput.InitiateTransaction(Cenium.EFT.Client.PaymentService.CardInfo@,System.String,Cenium.EFT.Client.PaymentService.Money@,Cenium.EFT.Client.PaymentService.TransactionType,System.Boolean)">
+            <summary>
+            Makes the user input form visible to user with the information included in
+            method parameters.
+            </summary>
+            <param name="cardInfo">Transaction related information.</param>
+            <param name="description">Transaction description.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="transactionType">Type of transaction.</param>
+            <returns>True if user keyed in proper information and starts the transaction.
+            False if user cancels the transaction.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.UserInput.InitiateTransaction(Cenium.EFT.Client.PaymentService.Token,Cenium.EFT.Client.PaymentService.CardInfo,System.String,Cenium.EFT.Client.PaymentService.Money@,Cenium.EFT.Client.PaymentService.TransactionType)">
+            <summary>
+            Makes the user input form visible to user with the information included in
+            method parameters.
+            </summary>
+            <param name="token">Token used in transaction.</param>
+            <param name="cardInfo">Transaction related information.</param>
+            <param name="description">Transaction description.</param>
+            <param name="amount">Transaction amount.</param>
+            <param name="transactionType">Type of transaction.</param>
+            <returns>True if user keyed in proper information and starts the transaction.
+            False if user cancels the transaction.</returns>
+        </member>
+        <member name="F:Cenium.EFT.Client.UserInput.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.UserInput.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cenium.EFT.Client.UserInput.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cenium.EFT.Client.Validator">
+            <summary>
+            Provides Basic Validation For Credit Cards.
+            </summary>
+        </member>
+        <member name="M:Cenium.EFT.Client.Validator.LuhnCheck(System.String)">
+            <summary>
+            Performs Luhn Check on the provided Card Number.
+            </summary>
+            <param name="cardNumber">Number to check.</param>
+            <returns>True if number sadisfies the Luhn Check, else false.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.Validator.IsExpiryDateValid(System.String)">
+            <summary>
+            Validates that expiry date string is in the correct format (MMYY).
+            </summary>
+            <param name="expiryDateString">Expiry date string.</param>
+            <returns>True if valid, else false.</returns>
+        </member>
+        <member name="M:Cenium.EFT.Client.Validator.IsCardExpired(System.String)">
+            <summary>
+            Checks if Card is Expired.
+            </summary>
+            <param name="expiryDateString">Expiry date string.</param>
+            <returns>True if card is expired, else false.</returns>
+        </member>
+    </members>
+</doc>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Reservations.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Reservations.Activities", "Cenium.Reservations.Activities\Cenium.Reservations.Activities.csproj", "{013DE868-D465-4124-B20C-A7E15C54418A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cenium.Reservations.Client.Windows", "Cenium.Reservations.Client.Windows\Cenium.Reservations.Client.Windows.csproj", "{349BA4E8-44A2-415E-9039-C81B1D518373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{013DE868-D465-4124-B20C-A7E15C54418A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013DE868-D465-4124-B20C-A7E15C54418A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013DE868-D465-4124-B20C-A7E15C54418A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349BA4E8-44A2-415E-9039-C81B1D518373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349BA4E8-44A2-415E-9039-C81B1D518373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349BA4E8-44A2-415E-9039-C81B1D518373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349BA4E8-44A2-415E-9039-C81B1D518373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

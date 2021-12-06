@@ -4,6 +4,37 @@
         <name>Cenium.Reservations.Activities</name>
     </assembly>
     <members>
+        <member name="T:Cenium.Reservations.Activities.Entity.ReservationResults">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.ReservationResults.Items">
+            <summary>
+            List of items.
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Entity.DateEntity">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Entity.DateEntity.#ctor">
+            <summary>
+            Initializes a new instance of the DateEntity class
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.DateEntity.CheckInDate">
+            <summary>
+            Date filter
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.DateEntity.CheckOutDate">
+            <summary>
+            Date filter
+            </summary>
+            [EntityMember(Order = 1)]
+        </member>
         <member name="T:Cenium.Reservations.Activities.Helpers.Contacts.ContactHelper">
             <summary>
             Explain the purpose of the class here
@@ -140,6 +171,13 @@
             Deletes a Reservation instance from the data store
             </summary>
             <param name="reservation">The instance to delete</param>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.UnavailableRooms(Cenium.Reservations.Activities.Entity.DateEntity)">
+            <summary>
+            Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
+            </summary>
+            <param name="dates">The instance to delete</param>
+            <returns>A strongly type IEnumerable instance </returns>
         </member>
         <member name="M:Cenium.Reservations.Activities.ReservationActivity.GetFromDatastore(System.Int64)">
             <summary>

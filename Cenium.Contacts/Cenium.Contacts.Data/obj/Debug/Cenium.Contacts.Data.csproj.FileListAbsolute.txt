@@ -20,3 +20,4 @@ D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Data\bin\Debug\EntityFramew
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Data\bin\Debug\NLog.xml
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Data\obj\Debug\Cenium.Contacts.Data.dll
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Data\obj\Debug\Cenium.Contacts.Data.pdb
+D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Data\obj\Debug\Cenium.Contacts.Data.csprojResolveAssemblyReference.cache

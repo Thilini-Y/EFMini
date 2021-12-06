@@ -23,6 +23,8 @@ using Cenium.Framework.Core.Attributes;
 using Cenium.Framework.Logging;
 using Cenium.Rooms.Data;
 using Cenium.Framework.Security;
+using Cenium.Rooms.Activities.Entities;
+using Cenium.Rooms.Activities.Helpers.Reservations;
 
 namespace Cenium.Rooms.Activities
 {
@@ -182,6 +184,57 @@ namespace Cenium.Rooms.Activities
 
             Logger.TraceMethodExit();
         }
+
+
+        /// <summary>
+        /// Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
+        /// </summary>
+        /// <param name="dates">The instance to delete</param>
+        /// <returns>A strongly type IEnumerable instance </returns>
+        [ActivityMethod("AvailableRooms", MethodType.Invoke, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Read)]
+        public List<Room> AvailableRoomIds(DateEntity dates)
+        {
+            Logger.TraceMethodEnter(dates);
+
+            DateEntityProxy dateProxy = new DateEntityProxy();
+            dateProxy.CheckInDate = dates.CheckInDate;
+            dateProxy.CheckOutDate = dates.CheckOutDate;
+
+            var unavailabeRooms = ReservationHelper.GetUnAvailableRooms(dateProxy);
+
+            var result = new ReservationResult();
+
+            List<long> roomids = new List<long>();
+
+            foreach (var item in unavailabeRooms.Items)
+            {
+
+                var reservation = new Reservation()
+                {
+                    RoomId = item.RoomId
+                };
+
+                result.Items.Add(reservation);
+                roomids.Add(reservation.RoomId);
+            }
+
+            List<Room> rooms = Query().ToList();
+
+            List<Room> availableRooms = new List<Room>();
+
+            foreach (var item in rooms)
+            {
+                if (!roomids.Contains(item.RoomId))
+                {
+                    availableRooms.Add(item);
+                }
+            }
+
+                return availableRooms ;
+
+        }
+
 
 
         /// <summary>

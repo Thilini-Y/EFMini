@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ui>
+  <!-- Add panes here-->
+  <panes>
+
+  </panes>
+  <!-- Add dialogs here -->
+  <dialogs>
+
+  </dialogs>
+
+  <!-- Add pages here-->
+  <pages>
+    <page id="Rooms.page.Room" name="Rooms" description="Add and maintain rooms information"
+            model="framework.pages.listviewmodel" type="framework.griddetailpage"
+            >
+
+      <modelProperties>
+        <property id="CreateMethod" value="Rooms/Room/Create" />
+        <property id="QueryMethod" value="Rooms/Room/Query" />
+        <property id="GetMethod" value="Rooms/Room/Get/{RoomId}" />
+        <property id="UpdateMethod" value="Rooms/Room/Update" />
+        <property id="RemoveMethod" value="Rooms/Room/Delete" />
+        <property id="IncludeChildRecords" value="true" type="Bool" />
+      </modelProperties>
+
+      <layout>
+        <section id="listView" readOnly="true">
+          <items>
+            <item id="RoomNumber" label="Room Number" type="Column" width="*"/>
+            <item id="RoomStatus" label="Room Status" type="Column" width="*"/>
+          </items>
+        </section>
+      </layout>
+
+    </page>
+  </pages>
+
+</ui>
