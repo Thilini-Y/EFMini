@@ -307,6 +307,13 @@
             <param name="roomTypeId">The key for RoomType</param>
             <returns>A RoomType instance, or null if there is no entities with the given key</returns>
         </member>
+        <member name="M:Cenium.Rooms.Activities.RoomTypesActivity.GetByRoomTypeName(System.String)">
+            <summary>
+            Gets a RoomType instance from the datastore based on RoomType keys.
+            </summary>
+            <param name="roomTypeName">The key for RoomType</param>
+            <returns>A RoomType instance, or null if there is no entities with the given key</returns>
+        </member>
         <member name="M:Cenium.Rooms.Activities.RoomTypesActivity.Create(Cenium.Rooms.Data.RoomType)">
             <summary>
             Adds a new instance of RoomType to the data store

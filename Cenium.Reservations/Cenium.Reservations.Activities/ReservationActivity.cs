@@ -125,7 +125,9 @@ namespace Cenium.Reservations.Activities
             {
                 int wholeDays = (reservation.CheckOutDate - reservation.CheckInDate).Days;
 
-                var priceResult = PriceHelper.GetPriceDetailsByCode(reservation.RoomTypeName);
+                var roomTypeDetails = RoomTypeHelper.GetRoomTypeDetailsByRoomTypeName(reservation.RoomTypeName);
+
+                var priceResult = PriceHelper.GetPriceDetailsByCode(roomTypeDetails.Code);
 
                 decimal roomPrice = priceResult.ChargingPrice;
 
@@ -194,7 +196,9 @@ namespace Cenium.Reservations.Activities
             {
                 int wholeDays = (reservation.CheckOutDate - reservation.CheckInDate).Days;
 
-                var priceResult = PriceHelper.GetPriceDetailsByCode(reservation.RoomTypeName);
+                var roomTypeDetails = RoomTypeHelper.GetRoomTypeDetailsByRoomTypeName(reservation.RoomTypeName);
+
+                var priceResult = PriceHelper.GetPriceDetailsByCode(roomTypeDetails.Code);
 
                 decimal roomPrice = priceResult.ChargingPrice;
 

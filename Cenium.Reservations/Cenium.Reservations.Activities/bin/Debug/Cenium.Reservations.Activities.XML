@@ -149,6 +149,11 @@
             <param name="name">The name of the property</param>
             <returns>The value of the property, or default(T) if the property does not exist, is the wrong type or is null</returns>
         </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Room.RoomTypeHelper">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
         <member name="T:Cenium.Reservations.Activities.Helpers.Room.RoomHelper">
             <summary>
             Explain the purpose of the class here
@@ -160,6 +165,16 @@
             </summary>
         </member>
         <member name="M:Cenium.Reservations.Activities.Helpers.Room.RoomProxy.#ctor">
+            <summary>
+            Initializes a new instance of the ContactProxy class
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.RoomType.RoomTypeProxy">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.RoomType.RoomTypeProxy.#ctor">
             <summary>
             Initializes a new instance of the ContactProxy class
             </summary>

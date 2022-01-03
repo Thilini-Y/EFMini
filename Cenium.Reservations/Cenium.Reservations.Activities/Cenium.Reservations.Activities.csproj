@@ -91,6 +91,8 @@
     <Compile Include="Helpers\Price\PriceHelper.cs" />
     <Compile Include="Helpers\Price\PriceProxy.cs" />
     <Compile Include="Helpers\ProxyWrapperBase.cs" />
+    <Compile Include="Helpers\RoomType\RoomTypeHelper.cs" />
+    <Compile Include="Helpers\RoomType\RoomTypeProxy.cs" />
     <Compile Include="Helpers\Room\RoomHelper.cs" />
     <Compile Include="Helpers\Room\RoomProxy.cs" />
     <Compile Include="NamespaceDoc.cs" />

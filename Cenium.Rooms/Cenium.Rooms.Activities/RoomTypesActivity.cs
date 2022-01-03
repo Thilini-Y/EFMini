@@ -97,6 +97,22 @@ namespace Cenium.Rooms.Activities
             return Logger.TraceMethodExit(result) as RoomType;
         }
 
+        /// <summary>
+        /// Gets a RoomType instance from the datastore based on RoomType keys.
+        /// </summary>
+        /// <param name="roomTypeName">The key for RoomType</param>
+        /// <returns>A RoomType instance, or null if there is no entities with the given key</returns>
+        [ActivityMethod("GetByRoomTypeName", MethodType.Get, IsDefault = true)]
+        [SecureResource("roomtypes.administration", SecureResourcePermissionLevel.Read)]
+        public RoomType GetByRoomTypeName(string roomTypeName)
+        {
+            Logger.TraceMethodEnter(roomTypeName);
+
+            var result = _ctx.RoomTypes.ReadOnlyQuery().Where(x => x.RoomTypeName == roomTypeName).FirstOrDefault();
+
+            return Logger.TraceMethodExit(result) as RoomType;
+        }
+
 
         /// <summary>
         /// Adds a new instance of RoomType to the data store
