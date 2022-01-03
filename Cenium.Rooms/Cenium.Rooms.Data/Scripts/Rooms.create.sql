@@ -12,15 +12,22 @@
  * User        Date          Comment
  * ----------- ------------- --------------------------------------------------------------------------------------------
  * Thilini.Y   11/16/2021    Created
- */
+ */D:\ceniumMiniproject\Cenium.Rooms\Cenium.Rooms.Data\Scripts\Rooms.create.sql
 
 /* Replace with component specific create script */
 
 create table [dbo].[Rooms_Rooms] (
     [RoomId] [bigint] not null identity,
-    [RoomNumber] [bigint] not null,
+    [RoomNumber] [nvarchar](255) not null,
 	[RoomStatus] [nvarchar](255) not null,
-	[RoomTypeId] [bigint] null,
+	[RoomTypeId] [bigint] not null,
+	[PropertyContextId] [bigint] null,
+	[ColorCode] [nvarchar](255) null,
+	[Width] [float] null,
+	[Length] [float] null,
+	[CeilingHeight] [float] null,
+	[Area] [float] null,
+	[AdditionalDetails] [nvarchar](1024) null,
     [TenantId] [uniqueidentifier] not null,
     [RowVersion] [rowversion] not null,
     primary key ([RoomId])
@@ -34,8 +41,7 @@ create table [dbo].[Rooms_RoomTypes] (
     [RoomTypeName] [nvarchar](max) not null,
     [RoomTypeDescription] [nvarchar](max) null,
     [Capacity] [int] null,
-	[PropertyId] [bigint] not null,
-	[PriceId] [bigint] not null,
+	[Code] [nvarchar](255) null,
     [TenantId] [uniqueidentifier] not null,
     [RowVersion] [rowversion] not null,
     primary key ([RoomTypeId])
@@ -47,30 +53,23 @@ create table [dbo].[Rooms_Features] (
 	[Description] [nvarchar](max) null,
     [Category] [nvarchar](max) not null,
     [Amount] [int] not null,
-	[PriceId] [bigint] not null,
     [TenantId] [uniqueidentifier] not null,
     [RowVersion] [rowversion] not null,
     primary key ([FeatureId])
 );
 
 
-create table [dbo].[FeatureRoomTypes] (
-    [Feature_FeatureId] [bigint] not null,
-    [RoomType_RoomTypeId] [bigint] not null,
-    primary key ([Feature_FeatureId], [RoomType_RoomTypeId])
+create table [dbo].[Rooms_FeatureRoomTypes] (
+	[FeatureRoomTypeId] [bigint] not null identity,
+	[RoomTypeId] [bigint] not null,
+    [FeatureId] [bigint] not null,
+	[TenantId] [uniqueidentifier] not null,
+    [RowVersion] [rowversion] not null,
+    primary key ([FeatureRoomTypeId])
 );
-alter table [dbo].[FeatureRoomTypes] add constraint [Feature_RoomTypes_Source] foreign key ([Feature_FeatureId]) references [dbo].[Rooms_Features]([FeatureId]) on delete cascade;
-alter table [dbo].[FeatureRoomTypes] add constraint [Feature_RoomTypes_Target] foreign key ([RoomType_RoomTypeId]) references [dbo].[Rooms_RoomTypes]([RoomTypeId]) on delete cascade;
+alter table [dbo].[Rooms_FeatureRoomTypes] add constraint [Feature_RoomTypes_S] foreign key ([Feature_FeatureId]) references [dbo].[Rooms_Features]([FeatureId]) on delete cascade;
+alter table [dbo].[Rooms_FeatureRoomTypes] add constraint [Feature_RoomTypes_T] foreign key ([RoomType_RoomTypeId]) references [dbo].[Rooms_RoomTypes]([RoomTypeId]) on delete cascade;
 
 
-create table [dbo].[RoomTypeFeature] (
-    [Feature_FeatureId] [bigint] not null,
-    [RoomType_RoomTypeId] [bigint] not null,
-    primary key ([Feature_FeatureId], [RoomType_RoomTypeId])
-);
-alter table [dbo].[RoomTypeFeatures] add constraint [RTF_Source] foreign key ([Feature_FeatureId]) references [dbo].[Rooms_Features]([FeatureId]) on delete cascade;
-alter table [dbo].[RoomTypeFeatures] add constraint [RTF_Target] foreign key ([RoomType_RoomTypeId]) references [dbo].[Rooms_RoomTypes]([RoomTypeId]) on delete cascade;
+#SetVersion([Cenium.Rooms.Data.RoomsEntitiesDbContext], [Rooms], [0.0.0.13], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])
 
-
-
-#SetVersion([Cenium.Rooms.Data.RoomsEntitiesDbContext], [Rooms], [0.0.0.3], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])

@@ -19,3 +19,4 @@ D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Client.Windows\bin\
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Client.Windows\obj\Debug\Cenium.Reservations.Client.Windows.g.resources
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Client.Windows\obj\Debug\Cenium.Reservations.Client.Windows.dll
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Client.Windows\obj\Debug\Cenium.Reservations.Client.Windows.pdb
+D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Client.Windows\obj\Debug\Cenium.Reservations.Client.Windows.csprojResolveAssemblyReference.cache

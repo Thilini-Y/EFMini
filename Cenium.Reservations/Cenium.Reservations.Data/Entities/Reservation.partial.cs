@@ -28,7 +28,7 @@ namespace Cenium.Reservations.Data
     public partial class Reservation
     {
 
-        private string _name;
+        private string _contactname;
         private string _idnumber;
 
         /// <summary>
@@ -36,10 +36,10 @@ namespace Cenium.Reservations.Data
         /// </summary>
         [NotMapped]
         [EntityMember(IsReadOnly = false, IsSortable = false, IsQueryable = true, Order = 101)]
-        public virtual string Name
+        public virtual string ContactName
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _contactname; }
+            set { _contactname = value; }
         }
 
         [NotMapped]
@@ -48,6 +48,16 @@ namespace Cenium.Reservations.Data
         {
             get { return _idnumber; }
             set { _idnumber = value; }
+        }
+
+        /// <summary>
+        /// Display date end used by date of birth date picker to disable registrating DOB into the future
+        /// </summary>
+        [NotMapped]
+        [EntityMember(IsReadOnly = false, IsSortable = false, IsQueryable = false, Order = 103)]
+        public virtual DateTime DisplayDateEnd
+        {
+            get { return DateTime.Now; }
         }
 
 

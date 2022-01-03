@@ -46,6 +46,7 @@ namespace Cenium.Contacts.Data
         private string _idNumber;
         private string _address;
         private bool _isActive;
+        private Nullable<System.Guid> _profileImage;
         private ICollection<Email> _emails;
         private ICollection<PhoneNumber> _phoneNumbers;
         private Guid _tenantId = Guid.Empty;
@@ -105,20 +106,27 @@ namespace Cenium.Contacts.Data
             set { _isActive = value; }
         }
 
+        [EntityMember(IsReadOnly = false, Order = 6, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<System.Guid> ProfileImage
+        {
+            get { return _profileImage; }
+            set { _profileImage = value; }
+        }
+
 
         #endregion
 
 
         #region Navigation Properties
 
-        [EntityMember(IsReadOnly = false, Order = 6)]
+        [EntityMember(IsReadOnly = false, Order = 7)]
         public virtual ICollection<Email> Emails
         {
             get { return _emails; }
             set { _emails = value; }
         }
 
-        [EntityMember(IsReadOnly = false, Order = 7)]
+        [EntityMember(IsReadOnly = false, Order = 8)]
         public virtual ICollection<PhoneNumber> PhoneNumbers
         {
             get { return _phoneNumbers; }
@@ -134,7 +142,7 @@ namespace Cenium.Contacts.Data
         /// <summary>
         /// Tenant identifier, for internal framework usage only
         /// </summary>
-        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 8, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 9, IsQueryable = false, IsSortable = false)]
         public virtual Guid TenantId
         {
             get { return _tenantId; }
@@ -146,7 +154,7 @@ namespace Cenium.Contacts.Data
         /// </summary>
         [Timestamp]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [EntityMember(IsReadOnly = true, Order = 9, IsHidden = true, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, Order = 10, IsHidden = true, IsQueryable = false, IsSortable = false)]
         public virtual byte[] RowVersion
         {
             get;

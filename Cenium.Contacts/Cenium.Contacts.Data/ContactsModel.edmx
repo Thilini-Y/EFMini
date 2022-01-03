@@ -36,6 +36,7 @@
           <Property Name="Address" Type="String" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PhoneNumbers" Relationship="ContactsModel.ContactPhoneNumber" FromRole="Contact" ToRole="PhoneNumber" />
+          <Property Name="ProfileImage" Type="Guid" Nullable="true" />
         </EntityType>
         <EntityType Name="Email">
           <Key>
@@ -88,7 +89,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ComponentModel" DisplayType="true" >
-        <EntityTypeShape EntityType="ContactsModel.Contact" Width="1.5" PointX="2.125" PointY="0.625" />
+        <EntityTypeShape EntityType="ContactsModel.Contact" Width="2.375" PointX="1.5" PointY="0.625" />
         <EntityTypeShape EntityType="ContactsModel.Email" Width="2.5" PointX="5.875" PointY="1" />
         <AssociationConnector Association="ContactsModel.ContactEmail" />
         <EntityTypeShape EntityType="ContactsModel.PhoneNumber" Width="2.5" PointX="5.875" PointY="3.25" />

@@ -78,7 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Entities\Feature.partial.cs" />
+    <Compile Include="Entities\Room.partial.cs" />
+    <Compile Include="Entities\RoomType.partial.cs" />
     <Compile Include="Feature.cs">
+      <DependentUpon>RoomsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureRoomType.cs">
       <DependentUpon>RoomsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

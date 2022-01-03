@@ -20,3 +20,4 @@ D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Data\bin\Debug\Enti
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Data\bin\Debug\NLog.xml
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Data\obj\Debug\Cenium.Reservations.Data.dll
 D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Data\obj\Debug\Cenium.Reservations.Data.pdb
+D:\ceniumMiniproject\Cenium.Reservations\Cenium.Reservations.Data\obj\Debug\Cenium.Reservations.Data.csprojResolveAssemblyReference.cache

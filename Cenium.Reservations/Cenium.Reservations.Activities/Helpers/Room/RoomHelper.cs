@@ -40,8 +40,18 @@ namespace Cenium.Reservations.Activities.Helpers.Room
             var activity = _roomActivityFactory.Create("Room");
             var result = ((activity == null) || (!activity.IsMethodAvailable("ChangeStatus"))) ? null : activity.Invoke("ChangeStatus", roomProxy.EntityProxy);
 
+        }
 
-            
+        public static RoomProxy GetRoomDetailsByRoomumber(string roomNumber)
+        {
+            if (!_isRoomAvailable)
+                return null;
+
+            var activity = _roomActivityFactory.Create("Room");
+            var result = ((activity == null) || (!activity.IsMethodAvailable("GetByRoomNumber"))) ? null : activity.Get("GetByRoomNumber", roomNumber);
+
+            var proxy = (result == null) ? null : new RoomProxy(result);
+            return proxy == null ? null : proxy;
         }
 
 

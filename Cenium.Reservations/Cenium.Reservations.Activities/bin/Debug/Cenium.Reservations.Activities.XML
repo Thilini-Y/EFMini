@@ -4,6 +4,56 @@
         <name>Cenium.Reservations.Activities</name>
     </assembly>
     <members>
+        <member name="T:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtension">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtension.#ctor">
+            <summary>
+            Initializes a new instance of the OrderContactExtension class
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtension.Items">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.#ctor">
+            <summary>
+            Initializes a new instance of the ReservationContactExtension class
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.ReservationNumber">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.CheckInDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.CheckOutDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.Status">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Activities.Entity.Extensions.ReservationContactExtensionItem.PropertyContextId">
+             <summary>
+            
+             </summary>
+        </member>
         <member name="T:Cenium.Reservations.Activities.Entity.ReservationResults">
             <summary>
             Explain the purpose of the class here
@@ -51,6 +101,26 @@
             </summary>
         </member>
         <member name="M:Cenium.Reservations.Activities.Helpers.Contacts.ContactProxy.#ctor">
+            <summary>
+            Initializes a new instance of the ContactProxy class
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Price.PriceHelper">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.Price.PriceHelper.GetPriceDetailsByCode(System.String)">
+            <summary>
+            Initializes a new instance of the ContactHelper class
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.Helpers.Price.PriceProxy">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.Helpers.Price.PriceProxy.#ctor">
             <summary>
             Initializes a new instance of the ContactProxy class
             </summary>
@@ -145,6 +215,13 @@
             <param name="reservation">The instance to update</param>
             <returns>The updated instance</returns>
         </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.Confirm(Cenium.Reservations.Data.Reservation)">
+            <summary>
+            Updates a Reservation instance in the data store
+            </summary>
+            <param name="reservation">The instance to update</param>
+            <returns>The updated instance</returns>
+        </member>
         <member name="M:Cenium.Reservations.Activities.ReservationActivity.CheckIn(Cenium.Reservations.Data.Reservation)">
             <summary>
             Updates a Reservation instance in the data store
@@ -160,6 +237,13 @@
             <returns>The updated instance</returns>
         </member>
         <member name="M:Cenium.Reservations.Activities.ReservationActivity.Cancel(Cenium.Reservations.Data.Reservation)">
+            <summary>
+            Updates a Reservation instance in the data store
+            </summary>
+            <param name="reservation">The instance to update</param>
+            <returns>The updated instance</returns>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ReservationActivity.Paid(Cenium.Reservations.Data.Reservation)">
             <summary>
             Updates a Reservation instance in the data store
             </summary>
@@ -189,6 +273,32 @@
         <member name="M:Cenium.Reservations.Activities.ReservationActivity.Dispose">
             <summary>
             Releases all resources used by this ReservationActivity instance.
+            </summary>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.ResourceHelper.ContactResultHandlerFactory">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ResourceHelper.ContactResultHandlerFactory.#ctor">
+            <summary>
+            Initializes a new instance of the ContactResultHandler class
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ResourceHelper.ContactResultHandlerFactory.CreateHandler">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="T:Cenium.Reservations.Activities.ResourceHelper.ReservationResultHandler">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Reservations.Activities.ResourceHelper.ReservationResultHandler.CreateContext">
+            <summary>
+            Initializes a new instance of the ReservationResultHandler class
             </summary>
         </member>
     </members>

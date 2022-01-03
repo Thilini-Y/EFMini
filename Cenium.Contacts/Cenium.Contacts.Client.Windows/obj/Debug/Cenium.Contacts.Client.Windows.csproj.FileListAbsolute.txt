@@ -1,5 +1,3 @@
-D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.csprojResolveAssemblyReference.cache
-D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.g.resources
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Cenium.Contacts.Client.Windows.dll
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Cenium.Contacts.Client.Windows.pdb
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Cenium.Framework.Client.dll
@@ -18,5 +16,7 @@ D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Ce
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Cenium.Framework.Logging.xml
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\Cenium.Framework.Service.Metadata.xml
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\bin\Debug\NLog.xml
+D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.g.resources
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.dll
 D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.pdb
+D:\ceniumMiniproject\Cenium.Contacts\Cenium.Contacts.Client.Windows\obj\Debug\Cenium.Contacts.Client.Windows.csprojResolveAssemblyReference.cache

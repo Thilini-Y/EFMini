@@ -51,6 +51,8 @@ namespace Cenium.Rooms.Activities.Entities
         [DateTimeFormat(DateTimeFormat.Date)]
         public DateTime CheckOutDate { get; set; }
 
+        
+
 
     }
 

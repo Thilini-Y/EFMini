@@ -50,6 +50,49 @@ namespace Cenium.Rooms.Activities.Helpers.Reservations
 
         }
 
+        public string RoomNumber
+        {
+            get { return GetValue<string>("RoomNumber"); }
+            set { SetValue("RoomNumber", value); }
+
+        }
+
+        public string ReservationNumber
+        {
+            get { return GetValue<string>("ReservationNumber"); }
+            set { SetValue("ReservationNumber", value); }
+
+        }
+
+
+        public DateTime CheckInDate
+        {
+            get { return GetValue<DateTime>("CheckInDate"); }
+            set { SetValue("CheckInDate", value); }
+
+        }
+
+        public DateTime CheckOutDate
+        {
+            get { return GetValue<DateTime>("CheckOutDate"); }
+            set { SetValue("CheckOutDate", value); }
+
+        }
+
+        public string RoomTypeName
+        {
+            get { return GetValue<string>("RoomTypeName"); }
+            set { SetValue("RoomTypeName", value); }
+
+        }
+
+        public string Status
+        {
+            get { return GetValue<string>("Status"); }
+            set { SetValue("Status", value); }
+
+        }
+
 
     }
 

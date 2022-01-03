@@ -22,3 +22,4 @@ D:\ceniumMiniproject\Cenium.Prices\Cenium.Prices.Client.Windows\bin\Debug\NLog.x
 D:\ceniumMiniproject\Cenium.Prices\Cenium.Prices.Client.Windows\obj\Debug\Cenium.Prices.Client.Windows.g.resources
 D:\ceniumMiniproject\Cenium.Prices\Cenium.Prices.Client.Windows\obj\Debug\Cenium.Prices.Client.Windows.dll
 D:\ceniumMiniproject\Cenium.Prices\Cenium.Prices.Client.Windows\obj\Debug\Cenium.Prices.Client.Windows.pdb
+D:\ceniumMiniproject\Cenium.Prices\Cenium.Prices.Client.Windows\obj\Debug\Cenium.Prices.Client.Windows.csprojResolveAssemblyReference.cache

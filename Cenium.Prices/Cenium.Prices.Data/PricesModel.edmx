@@ -22,7 +22,7 @@
           <Property Name="Code" Type="String" Nullable="false" />
           <Property Name="Description" Type="String" Nullable="false" />
           <Property Name="ChargingPrice" Type="Decimal" Nullable="false" />
-          <Property Name="HotelId" Type="Int64" Nullable="false" />
+          <Property Name="PropertyContextId" Nullable="false" Type="Int64"><a:IsPropertyContext xmlns:a="http://schemas.cenium.com/edmx/extension/IsPropertyContext">False</a:IsPropertyContext></Property>
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

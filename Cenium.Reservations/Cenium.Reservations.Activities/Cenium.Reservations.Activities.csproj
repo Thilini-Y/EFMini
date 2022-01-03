@@ -82,16 +82,22 @@
   <ItemGroup>
     <Compile Include="Component.cs" />
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Entity\Extensions\ReservationContactExtension.cs" />
+    <Compile Include="Entity\Extensions\ReservationContactExtensionItem.cs" />
     <Compile Include="Entity\ReservationResults.cs" />
     <Compile Include="Entity\DateEntity.cs" />
     <Compile Include="Helpers\Contacts\ContactHelper.cs" />
     <Compile Include="Helpers\Contacts\ContactProxy.cs" />
+    <Compile Include="Helpers\Price\PriceHelper.cs" />
+    <Compile Include="Helpers\Price\PriceProxy.cs" />
     <Compile Include="Helpers\ProxyWrapperBase.cs" />
     <Compile Include="Helpers\Room\RoomHelper.cs" />
     <Compile Include="Helpers\Room\RoomProxy.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationActivity.cs" />
+    <Compile Include="ResourceHelper\ContactResultHandler.cs" />
+    <Compile Include="ResourceHelper\ReservationResultHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

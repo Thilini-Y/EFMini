@@ -2,6 +2,8 @@
 <metadata>
   <enumerations>
     <!--<enumeration id="mycomponent.enumeration.myenum" values="1=One^2=Two^3=Three" />-->
+    <enumeration id="rooms.enum.featurecategory" values="Furniture^Communication^Electronic Device^Decorations^Fabric^Sanitation^Other" />
+    <enumeration id="rooms.enum.roomstatus" values="Clean^Assigned^Occupied^Dirty" />
   </enumerations>
 
 
@@ -23,6 +25,13 @@
         </extension>
       </extensions>
     </entity>-->
+
+    <entity id="Rooms.Room">
+      <properties>
+        <property id="RoomNumber" value="Auto" />
+        <property id="RoomStatus" value="Clean" />
+      </properties>
+    </entity>
 
   </entities>
 

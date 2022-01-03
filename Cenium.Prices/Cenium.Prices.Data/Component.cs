@@ -20,5 +20,5 @@ using Cenium.Framework.Data;
 
 [assembly: Component("Prices")]
 
-[assembly: ModelVersion("0.0.0.1")]
+[assembly: ModelVersion("0.0.0.2")]
 

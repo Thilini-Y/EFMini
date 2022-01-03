@@ -25,6 +25,7 @@ using Cenium.Rooms.Data;
 using Cenium.Framework.Security;
 using Cenium.Rooms.Activities.Entities;
 using Cenium.Rooms.Activities.Helpers.Reservations;
+using System.Collections;
 
 namespace Cenium.Rooms.Activities
 {
@@ -67,7 +68,8 @@ namespace Cenium.Rooms.Activities
         /// <returns>A strongly type IEnumerable instance </returns>
         [ActivityMethod("Query", MethodType.Query, IsDefault = true)]
         [ActivityResult("RoomType")]
-        [ActivityResult("RoomType.Features")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Read)]
         public IEnumerable<Room> Query()
         {
@@ -86,13 +88,33 @@ namespace Cenium.Rooms.Activities
         /// <returns>A Room instance, or null if there is no entities with the given key</returns>
         [ActivityMethod("Get", MethodType.Get, IsDefault = true)]
         [ActivityResult("RoomType")]
-        [ActivityResult("RoomType.Features")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Read)]
         public Room Get(long roomId)
         {
             Logger.TraceMethodEnter(roomId);
 
             var result = _ctx.Rooms.FindByKeys(roomId);
+
+            return Logger.TraceMethodExit(result) as Room;
+        }
+
+        /// <summary>
+        /// Gets a Room instance from the datastore based on Room keys.
+        /// </summary>
+        /// <param name="roomNumber">The key for Room</param>
+        /// <returns>A Room instance, or null if there is no entities with the given key</returns>
+        [ActivityMethod("GetByRoomNumber", MethodType.Get, IsDefault = true)]
+        [ActivityResult("RoomType")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
+        [SecureResource("rooms.administration", SecureResourcePermissionLevel.Read)]
+        public Room GetByRoomNumber(string roomNumber)
+        {
+            Logger.TraceMethodEnter(roomNumber);
+
+            var result = _ctx.Rooms.ReadOnlyQuery().Where(x => x.RoomNumber.Equals(roomNumber) ).FirstOrDefault();
 
             return Logger.TraceMethodExit(result) as Room;
         }
@@ -104,10 +126,42 @@ namespace Cenium.Rooms.Activities
         /// <param name="room">The instance to add</param>
         /// <returns>The created instance</returns>
         [ActivityMethod("Create", MethodType.Create, IsDefault = true)]
+        [ActivityResult("RoomType")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
         public Cenium.Rooms.Data.Room Create(Room room)
         {
             Logger.TraceMethodEnter(room);
+
+            //generate room number
+            var items = _ctx.Rooms.ReadOnlyQuery().OrderByDescending(p => p.RoomNumber);
+
+            if (items != null)
+            {
+                IEnumerable<Room> roomNumberList = items.ToList();
+
+                string maxRoomNumber = roomNumberList.FirstOrDefault().RoomNumber;
+
+                maxRoomNumber = maxRoomNumber.Remove(0, 2);
+
+                string newRoomnNumber = string.Format("RM{0:000000}", long.Parse(maxRoomNumber) + 1);
+
+                room.RoomNumber = newRoomnNumber;
+
+
+            }
+
+            else
+            {
+                string newRoomnNumber = string.Format("RM{0:000000}", 1);
+
+                room.RoomNumber = newRoomnNumber;
+            }
+
+            room.RoomStatus = "Clean";
+
+
 
             room = _ctx.Rooms.Add(room);
             _ctx.SaveChanges();
@@ -122,6 +176,9 @@ namespace Cenium.Rooms.Activities
         /// <param name="room">The instance to update</param>
         /// <returns>The updated instance</returns>
         [ActivityMethod("Update", MethodType.Update, IsDefault = true)]
+        [ActivityResult("RoomType")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
         public Cenium.Rooms.Data.Room Update(Room room)
         {
@@ -132,6 +189,7 @@ namespace Cenium.Rooms.Activities
 
             return Logger.TraceMethodExit(GetFromDatastore(room.RoomId)) as Room;
         }
+
 
         [ActivityMethod("ChangeStatus", MethodType.Invoke, IsDefault = true)]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
@@ -152,8 +210,11 @@ namespace Cenium.Rooms.Activities
         }
 
         [ActivityMethod("Clean", MethodType.Invoke, IsDefault = true)]
+        [ActivityResult("RoomType")]
+        [ActivityResult("RoomType.FeatureRoomTypes")]
+        [ActivityResult("RoomType.FeatureRoomTypes.Feature")]
         [SecureResource("rooms.administration", SecureResourcePermissionLevel.Write)]
-        public void Clean(Room room)
+        public Room Clean(Room room)
         {
             Logger.TraceMethodEnter(room);
 
@@ -164,7 +225,7 @@ namespace Cenium.Rooms.Activities
             room = _ctx.Rooms.Modify(room);
             _ctx.SaveChanges();
 
-            
+            return Logger.TraceMethodExit(room) as Room;
         }
 
 
@@ -186,52 +247,116 @@ namespace Cenium.Rooms.Activities
         }
 
 
-        /// <summary>
-        /// Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
-        /// </summary>
-        /// <param name="dates">The instance to delete</param>
-        /// <returns>A strongly type IEnumerable instance </returns>
-        [ActivityMethod("AvailableRooms", MethodType.Invoke, IsDefault = true)]
-        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Read)]
-        public List<Room> AvailableRoomIds(DateEntity dates)
-        {
-            Logger.TraceMethodEnter(dates);
+        ///// <summary>
+        ///// Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
+        ///// </summary>
+        ///// <param name="dates">The instance to delete</param>
+        ///// <returns>A strongly type IEnumerable instance </returns>
+        //[ActivityMethod("AvailableRooms", MethodType.Invoke, IsDefault = true)]
+        //[SecureResource("reservation.administration", SecureResourcePermissionLevel.Read)]
+        //public List<Room> AvailableRoomIds(DateEntity dates)
+        //{
+        //    Logger.TraceMethodEnter(dates);
 
+        //    DateEntityProxy dateProxy = new DateEntityProxy();
+        //    dateProxy.CheckInDate = dates.CheckInDate;
+        //    dateProxy.CheckOutDate = dates.CheckOutDate;
+
+        //    var unavailabeRooms = ReservationHelper.GetUnAvailableRooms(dateProxy);
+
+        //    var result = new ReservationResult();
+
+        //    List<long> roomids = new List<long>();
+
+        //    foreach (var item in unavailabeRooms.Items)
+        //    {
+
+        //        var reservation = new Reservation()
+        //        {
+        //            RoomId = item.RoomId
+        //        };
+
+        //        result.Items.Add(reservation);
+        //        roomids.Add(reservation.RoomId);
+        //    }
+
+        //    List<Room> rooms = Query().ToList();
+
+        //    List<Room> availableRooms = new List<Room>();
+
+        //    foreach (var item in rooms)
+        //    {
+        //        if (!roomids.Contains(item.RoomId))
+        //        {
+        //            availableRooms.Add(item);
+        //        }
+        //    }
+
+        //        return availableRooms ;
+
+        //}
+
+
+        
+
+        /// <summary>
+        /// Activity query method that returns an IEnumerable&lt;Room&gt; instance. 
+        /// </summary>
+        /// <param name="reservationId">The instance to delete</param>
+        /// <returns>A strongly type IEnumerable instance </returns>
+        [ActivityMethod("AvailableRooms", MethodType.Query, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Read)]
+        public IEnumerable<Room> AvailableRooms(long reservationId)
+        {
+            Logger.TraceMethodEnter(reservationId);
+
+            var result = ReservationHelper.GetReservationDetails(reservationId);
+            
             DateEntityProxy dateProxy = new DateEntityProxy();
-            dateProxy.CheckInDate = dates.CheckInDate;
-            dateProxy.CheckOutDate = dates.CheckOutDate;
+            dateProxy.CheckInDate = result.CheckInDate;
+            dateProxy.CheckOutDate = result.CheckOutDate;
+     
 
             var unavailabeRooms = ReservationHelper.GetUnAvailableRooms(dateProxy);
 
-            var result = new ReservationResult();
+            var reservationResult = new ReservationResult();
 
-            List<long> roomids = new List<long>();
+            ArrayList roomNumbersList = new ArrayList();
 
             foreach (var item in unavailabeRooms.Items)
             {
 
-                var reservation = new Reservation()
+                Reservation reservation = new Reservation()
                 {
-                    RoomId = item.RoomId
+                    RoomNumber = item.RoomNumber
                 };
 
-                result.Items.Add(reservation);
-                roomids.Add(reservation.RoomId);
+                reservationResult.Items.Add(reservation);
+
+                if (reservation.RoomNumber != null || (reservation.Status != "Cancel" || reservation.Status != "CheckedOut"))
+                {
+                    roomNumbersList.Add(reservation.RoomNumber);
+                }
+                
             }
+
+            
 
             List<Room> rooms = Query().ToList();
 
-            List<Room> availableRooms = new List<Room>();
+            var availableRooms = new List<Room>();
 
             foreach (var item in rooms)
             {
-                if (!roomids.Contains(item.RoomId))
+                if (!roomNumbersList.Contains(item.RoomNumber) && item.RoomType.RoomTypeName == result.RoomTypeName)
                 {
                     availableRooms.Add(item);
                 }
             }
 
-                return availableRooms ;
+          
+            return Logger.TraceMethodExit(availableRooms) as IEnumerable<Room>;
+
 
         }
 

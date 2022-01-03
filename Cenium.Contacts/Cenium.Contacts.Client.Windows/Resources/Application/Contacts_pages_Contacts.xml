@@ -2,6 +2,171 @@
 <ui>
   <!-- Add panes here-->
   <panes>
+    
+    <pane id="contacts.pane.contact.details" type="standard.pane.grouplayout" columns="1">
+      <layout>
+
+        <section id="left" label="General" constraints="column=0" >
+          <items>
+
+            <item id="ProfileImage" label="" type="standard.controls.data.imagebox" width="150" labelVisibility="Collapsed" column="0" >
+              <properties>
+                <property id="IsScaleToFit" value="true" type="Bool" />
+                <property id="EmptyHelpText" value="Click to select a main image or drop a main image here." />
+                <property id="Height" value="150" type="Double" />
+                <property id="VerticalAlignment" value="Top" />
+                <property id="HorizontalAlignment" value="Left" />
+              </properties>
+            </item>
+
+          </items>
+        </section>
+
+        <section id="general" label="General" constraints="column=1" >
+          <items>
+            <item id="Name" label="Name" type="TextBox"  readOnly="false"  column="0"/>
+            <item id="IdNumber" label="Id Number" type="TextBox"  readOnly="false"  column="1"/>
+            <item id="DOB" label="Date of Birth" type="DatePicker"  readOnly="false"  column="0"/>
+            <item id="Address" label="Address" type="TextBox"  readOnly="false"  column="1"/>
+           
+          </items>
+        </section>
+
+      </layout>
+    </pane>
+    
+
+    <!--<pane id="contacts.pane.contact.details.ContactDetails" type="standard.pane.grouplayout" columns="1">
+      <layout>
+        <section id="general" label="Contact Details" constraints="column=0">
+          <items>
+
+            <item id="pane" labelVisibility="Collapsed" type="contacts.pane.contact.details.Emails" readOnly="false" column="0"/>
+            <item id="pane" labelVisibility="Collapsed" type="contacts.pane.contact.details.PhoneNumbers" readOnly="false" column="1" />
+
+          </items>
+        </section>
+      </layout>
+    </pane>
+
+    <pane id="contacts.pane.contact.details.Emails" type="standard.pane.grouplayout">
+      <layout>
+        <section id="general" label="">
+          <items>
+
+            <item id="Emails" labelVisibility="Collapsed" type="contacts.pane.contact.details.Emails.EmailAddress"  readOnly="false" />
+
+          </items>
+        </section>
+      </layout>
+    </pane>
+
+   
+    
+   
+    <pane id="contacts.pane.contact.details.Emails.EmailAddress" type="framework.pane.DataGridPane">
+      <layout>
+        <section id="gridview" readOnly="false">
+          <items>
+            
+            <item id="EmailAddress" label="!contacts.email.emailaddress" type="column"  readOnly="false"  width="1*"/>
+           
+          </items>
+        </section>
+      </layout>
+    </pane>
+
+
+    <pane id="contacts.pane.contact.details.PhoneNumbers" type="standard.pane.grouplayout">
+      <layout>
+        <section id="general" label="">
+          <items>
+
+            <item id="PhoneNumbers" labelVisibility="Collapsed" type="contacts.pane.contact.details.PhoneNumbers.PhoneNumber"  readOnly="false" />
+
+          </items>
+        </section>
+      </layout>
+    </pane>
+
+
+
+
+    <pane id="contacts.pane.contact.details.PhoneNumbers.PhoneNumber" type="framework.pane.DataGridPane">
+      <layout>
+        <section id="gridview" readOnly="false">
+          <items>
+
+            <item id="ContactNumber" label="!contacts.PhoneNumber.ContactNumber" type="column"  readOnly="false"  width="1*"/>
+
+          </items>
+        </section>
+      </layout>
+    </pane>-->
+    
+    
+    
+    
+
+    <pane id="contact.pane.contacts.email.top" type="framework.pane.DataGridPane">
+      <layout>
+        <section id="gridview">
+          <items>
+           
+            <item id="EmailAddress" label="Email Address" type="Column" width="*" />
+          
+          </items>
+        </section>
+      </layout>
+
+    </pane>
+
+    <pane id="contact.pane.contacts.phone.top" type="framework.pane.DataGridPane">
+      <layout>
+        <section id="gridview">
+          <items>
+
+            <item id="ContactNumber" label="Contact Number" type="Column" width="*" />
+
+          </items>
+        </section>
+      </layout>
+
+    </pane>
+
+
+    <pane id="contacts.pane.contact.details.contactdata" type="standard.pane.grouplayout" columns="1">
+      <layout>
+      
+        <section id="contactdata" label="Contact Details" constraints="column=0">
+          <items>
+            <item id="Emails" type="contact.pane.contacts.email.top" labelVisibility="Collapsed" column="0" >
+              <properties>
+                <property id="Height" value="200" type="Double" />
+              </properties>
+            </item>
+            <item id="Emails" label="" type="framework.controls.data.DataCollectionCommandBar" >
+              <properties>
+                <property id="ParentControlName" value="EmailAddress" />
+              </properties>
+            </item>
+            <item id="PhoneNumbers" type="contact.pane.contacts.phone.top" labelVisibility="Collapsed" column="1" >
+              <properties>
+                <property id="Height" value="200" type="Double" />
+              </properties>
+            </item>
+            <item id="PhoneNumbers" label="" type="framework.controls.data.DataCollectionCommandBar" column="1" >
+              <properties>
+                <property id="ParentControlName" value="ContactNumber" />
+              </properties>
+            </item>
+          </items>
+        </section>
+        
+      </layout>
+    </pane>
+
+
 
   </panes>
   <!-- Add dialogs here -->
@@ -12,7 +177,7 @@
   <!-- Add pages here-->
   <pages>
     <page id="contacts.page.contact" name="Contacts" description="Add and maintain contacts information"
-            model="framework.pages.listviewmodel" type="framework.griddetailpage"
+            model="framework.pages.listviewmodel" type="standard.pagetype.list"
             >
 
       <modelProperties>
@@ -25,7 +190,7 @@
       </modelProperties>
 
       <layout>
-        <section id="listView" readOnly="true">
+        <section id="griditem" readOnly="true">
           <items>
             <item id="Name" label="Contacts Name" type="Column" width="*"/>
             <item id="DOB" label="Date of birth" type="Column" format="ShortDate" width="*"/>
@@ -33,7 +198,33 @@
             <item id="Address" label="Address" type="Column" width="*"/>
           </items>
         </section>
+        
+        <section id="summary">
+          <items>
+            <item id="pane" labelVisibility="Collapsed" type="contacts.pane.contact.details" />
+            <!--<item id="dummy" labelVisibility="Collapsed" type="contacts.pane.contact.details.ContactDetails" readOnly="false"/>-->
+            <item id="contactdummy" labelVisibility="Collapsed" type="contacts.pane.contact.details.contactdata" readOnly="false"/>
+          </items>
+        </section>
+      
+      
       </layout>
+
+      <actions>
+        <action id="clear" type="framework.ClearAction" />
+        <action id="refresh" type="framework.RefreshAction" />
+        <action id="refreshitem" type="standard.actions.refreshitem" />
+        <action id="save" type="framework.SaveAction" />
+        <action id="add" type="framework.CreateAction" />
+        
+        <action id="delete" type="framework.DeleteAction" >
+          <properties>
+            <property id="IsAutoSave" value="true" type="Bool" />
+            <property id="IsUserConfirmationRequired" value="true" type="Bool" />
+          </properties>
+        </action>
+
+      </actions>
 
     </page>
   </pages>

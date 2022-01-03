@@ -91,6 +91,22 @@ namespace Cenium.Prices.Activities
             return Logger.TraceMethodExit(result) as Price;
         }
 
+        /// <summary>
+        /// Gets a Price instance from the datastore based on Price keys.
+        /// </summary>
+        /// <param name="priceCode">The key for Price</param>
+        /// <returns>A Price instance, or null if there is no entities with the given key</returns>
+        [ActivityMethod("GetByCode", MethodType.Get, IsDefault = true)]
+        [SecureResource("price.administration", SecureResourcePermissionLevel.Read)]
+        public Price GetByCode(string priceCode)
+        {
+            Logger.TraceMethodEnter(priceCode);
+
+            var result = _ctx.Prices.ReadOnlyQuery().Where(x => x.Code == priceCode).FirstOrDefault();
+
+            return Logger.TraceMethodExit(result) as Price;
+        }
+
 
         /// <summary>
         /// Adds a new instance of Price to the data store

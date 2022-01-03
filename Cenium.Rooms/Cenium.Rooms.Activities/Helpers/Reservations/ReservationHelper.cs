@@ -51,6 +51,23 @@ namespace Cenium.Rooms.Activities.Helpers.Reservations
 
         }
 
+        /// <summary>
+        /// Initializes a new instance of the ReservationHelper class
+        /// </summary>
+        public static ReservationProxy GetReservationDetails(long reservationId)
+        {
+            if (!_isReservationAvailable)
+                return null;
+
+            var activity = _reservationsActivityFactory.Create("Reservation");
+            var result = ((activity == null) || (!activity.IsMethodAvailable("Get"))) ? null : activity.Get("Get", reservationId);
+
+
+            var proxy = (result == null) ? null : new ReservationProxy(result);
+            return proxy == null ? null : proxy;
+
+        }
+
 
         public static IEntityProxy CreateReservationProxy()
         {

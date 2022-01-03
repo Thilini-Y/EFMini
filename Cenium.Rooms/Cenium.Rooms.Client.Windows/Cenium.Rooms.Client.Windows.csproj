@@ -83,6 +83,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\CleanAction.cs" />
     <Compile Include="Dependencies.cs" />
     <Compile Include="RoomsClientInitializer.cs" />
     <Compile Include="NamespaceDoc.cs" />
@@ -94,7 +95,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Application\Rooms_metadata.xml" />
     <EmbeddedResource Include="Resources\Application\Rooms_navigator.xml" />
-    <EmbeddedResource Include="Resources\Application\Rooms_pages.xml" />
+    <EmbeddedResource Include="Resources\Application\Rooms_pages.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\Rooms.png" />
@@ -103,7 +106,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Application\Rooms_pages_Room.xml" />
+    <EmbeddedResource Include="Resources\Application\Rooms_pages_Room.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Application\Rooms_pages_RoomType.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Application\rooms_pages_feature.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\ManageCategories.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

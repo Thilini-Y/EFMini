@@ -44,7 +44,7 @@ namespace Cenium.Prices.Data
         private string _code;
         private string _description;
         private decimal _chargingPrice;
-        private long _hotelId;
+        private long _propertyContextId;
         private Guid _tenantId = Guid.Empty;
 
         #endregion
@@ -69,7 +69,7 @@ namespace Cenium.Prices.Data
             set { _code = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 2, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual string Description
         {
@@ -85,12 +85,12 @@ namespace Cenium.Prices.Data
             set { _chargingPrice = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 4, IsPrivate = false, IsQueryable = true, IsSortable = true)]
-        public virtual long HotelId
+        public virtual long PropertyContextId
         {
-            get { return _hotelId; }
-            set { _hotelId = value; }
+            get { return _propertyContextId; }
+            set { _propertyContextId = value; }
         }
 
 

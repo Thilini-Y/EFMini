@@ -44,10 +44,9 @@ namespace Cenium.Rooms.Data
         private string _roomTypeName;
         private string _roomTypeDescription;
         private Nullable<int> _capacity;
-        private long _propertyId;
-        private long _priceId;
+        private string _code;
         private ICollection<Room> _rooms;
-        private ICollection<Feature> _features;
+        private ICollection<FeatureRoomType> _featureRoomTypes;
         private Guid _tenantId = Guid.Empty;
 
         #endregion
@@ -86,20 +85,11 @@ namespace Cenium.Rooms.Data
             set { _capacity = value; }
         }
 
-        [Required]
         [EntityMember(IsReadOnly = false, Order = 4, IsPrivate = false, IsQueryable = true, IsSortable = true)]
-        public virtual long PropertyId
+        public virtual string Code
         {
-            get { return _propertyId; }
-            set { _propertyId = value; }
-        }
-
-        [Required]
-        [EntityMember(IsReadOnly = false, Order = 5, IsPrivate = false, IsQueryable = true, IsSortable = true)]
-        public virtual long PriceId
-        {
-            get { return _priceId; }
-            set { _priceId = value; }
+            get { return _code; }
+            set { _code = value; }
         }
 
 
@@ -108,18 +98,18 @@ namespace Cenium.Rooms.Data
 
         #region Navigation Properties
 
-        [EntityMember(IsReadOnly = false, Order = 6)]
+        [EntityMember(IsReadOnly = false, Order = 5)]
         public virtual ICollection<Room> Rooms
         {
             get { return _rooms; }
             set { _rooms = value; }
         }
 
-        [EntityMember(IsReadOnly = false, Order = 7)]
-        public virtual ICollection<Feature> Features
+        [EntityMember(IsReadOnly = false, Order = 6)]
+        public virtual ICollection<FeatureRoomType> FeatureRoomTypes
         {
-            get { return _features; }
-            set { _features = value; }
+            get { return _featureRoomTypes; }
+            set { _featureRoomTypes = value; }
         }
 
 
@@ -131,7 +121,7 @@ namespace Cenium.Rooms.Data
         /// <summary>
         /// Tenant identifier, for internal framework usage only
         /// </summary>
-        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 8, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 7, IsQueryable = false, IsSortable = false)]
         public virtual Guid TenantId
         {
             get { return _tenantId; }
@@ -143,7 +133,7 @@ namespace Cenium.Rooms.Data
         /// </summary>
         [Timestamp]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [EntityMember(IsReadOnly = true, Order = 9, IsHidden = true, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, Order = 8, IsHidden = true, IsQueryable = false, IsSortable = false)]
         public virtual byte[] RowVersion
         {
             get;

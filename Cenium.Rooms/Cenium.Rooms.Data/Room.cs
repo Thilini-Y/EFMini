@@ -41,8 +41,15 @@ namespace Cenium.Rooms.Data
         #region Variables
 
         private long _roomId;
-        private long _roomNumber;
+        private string _roomNumber;
         private string _roomStatus;
+        private long _propertyContextId;
+        private string _colorCode;
+        private Nullable<double> _width;
+        private Nullable<double> _length;
+        private Nullable<double> _ceilingHeight;
+        private Nullable<double> _area;
+        private string _additionalDetails;
         private long _roomTypeId;
         private RoomType _roomType;
         private Guid _tenantId = Guid.Empty;
@@ -61,20 +68,70 @@ namespace Cenium.Rooms.Data
             set { _roomId = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 1, IsPrivate = false, IsQueryable = true, IsSortable = true)]
-        public virtual long RoomNumber
+        public virtual string RoomNumber
         {
             get { return _roomNumber; }
             set { _roomNumber = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 2, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual string RoomStatus
         {
             get { return _roomStatus; }
             set { _roomStatus = value; }
+        }
+
+        [Required]
+        [EntityMember(IsReadOnly = false, Order = 3, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual long PropertyContextId
+        {
+            get { return _propertyContextId; }
+            set { _propertyContextId = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 4, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string ColorCode
+        {
+            get { return _colorCode; }
+            set { _colorCode = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 5, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<double> Width
+        {
+            get { return _width; }
+            set { _width = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 6, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<double> Length
+        {
+            get { return _length; }
+            set { _length = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 7, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<double> CeilingHeight
+        {
+            get { return _ceilingHeight; }
+            set { _ceilingHeight = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 8, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<double> Area
+        {
+            get { return _area; }
+            set { _area = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 9, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string AdditionalDetails
+        {
+            get { return _additionalDetails; }
+            set { _additionalDetails = value; }
         }
 
 
@@ -88,14 +145,14 @@ namespace Cenium.Rooms.Data
         /// </summary>
         [Required]
         [ForeignKey("RoomType")]
-        [EntityMember(IsReadOnly = false, Order = 3, Reference = "RoomType", IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = false, Order = 10, Reference = "RoomType", IsQueryable = false, IsSortable = false)]
         public virtual long RoomTypeId
         {
             get { return _roomTypeId; }
             set { _roomTypeId = value; }
         }
 
-        [EntityMember(IsReadOnly = false, Order = 4)]
+        [EntityMember(IsReadOnly = false, Order = 11)]
         public virtual RoomType RoomType
         {
             get { return _roomType; }
@@ -111,7 +168,7 @@ namespace Cenium.Rooms.Data
         /// <summary>
         /// Tenant identifier, for internal framework usage only
         /// </summary>
-        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 5, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 12, IsQueryable = false, IsSortable = false)]
         public virtual Guid TenantId
         {
             get { return _tenantId; }
@@ -123,7 +180,7 @@ namespace Cenium.Rooms.Data
         /// </summary>
         [Timestamp]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [EntityMember(IsReadOnly = true, Order = 6, IsHidden = true, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, Order = 13, IsHidden = true, IsQueryable = false, IsSortable = false)]
         public virtual byte[] RowVersion
         {
             get;

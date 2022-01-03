@@ -20,12 +20,17 @@
           </Key>
           <Property Name="ReservationId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PropertyContextId" Type="Int64" Nullable="false" ><a:IsPropertyContext xmlns:a="http://schemas.cenium.com/edmx/extension/IsPropertyContext">True</a:IsPropertyContext></Property>
-          <Property Name="ReservationNumber" Type="Int64" Nullable="false" />
+          <Property Name="ReservationNumber" Type="String" Nullable="true" />
           <Property Name="CheckInDate" Type="DateTime" Nullable="false" />
           <Property Name="CheckOutDate" Type="DateTime" Nullable="false" />
-          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="true" />
           <Property Name="RoomId" Type="Int64" Nullable="false" />
-          <Property Name="ContactId" Type="Int64" Nullable="false" />
+          <Property Name="ContactId" Nullable="false" Type="Int64" />
+          <Property Name="Name" Type="String" Nullable="true" />
+          <Property Name="RoomTypeName" Type="String" Nullable="true" />
+          <Property Name="RoomNumber" Type="String" Nullable="true" />
+          <Property Name="Price" Type="Decimal" Nullable="true" />
+          <Property Name="PaymentStatus" Type="String" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

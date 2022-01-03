@@ -23,6 +23,7 @@ create table [dbo].[Contacts_Contacts] (
 	[IdNumber] [nvarchar](255) not null,
 	[Address] [nvarchar](1024) not null,
 	[IsActive] [bit] not null,
+	[ProfileImage] [uniqueidentifier] null,
     [TenantId] [uniqueidentifier] not null,
     [RowVersion] [rowversion] not null,
     primary key ([ContactId])
@@ -54,4 +55,4 @@ create table [dbo].[Contacts_PhoneNumbers] (
 alter table [dbo].[Contacts_PhoneNumbers] add constraint [PhoneNumber_Contact] foreign key ([ContactId]) references [dbo].[Contacts_Contacts]([ContactId]) on delete cascade;
 
 
-#SetVersion([Cenium.Contacts.Data.ContactsEntitiesDbContext], [Contacts], [0.0.0.2], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])
+#SetVersion([Cenium.Contacts.Data.ContactsEntitiesDbContext], [Contacts], [0.0.0.3], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])

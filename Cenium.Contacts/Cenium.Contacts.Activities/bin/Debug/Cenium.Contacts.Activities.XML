@@ -132,6 +132,36 @@
             Releases all resources used by this EmailActivity instance.
             </summary>
         </member>
+        <member name="T:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension.#ctor">
+            <summary>
+            Initializes a new instance of the ContactReservationExtension class
+            </summary>
+        </member>
+        <member name="P:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension.DOB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension.IdNumber">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Cenium.Contacts.Activities.Entities.Extensions.ContactReservationExtension.Address">
+             <summary>
+            
+             </summary>
+        </member>
         <member name="T:Cenium.Contacts.Activities.NamespaceDoc">
             <summary>
             Contains activity classes that comprise the application processing layer of the component Contacts
@@ -200,6 +230,27 @@
             <summary>
             Releases all resources used by this PhoneNumberActivity instance.
             </summary>
+        </member>
+        <member name="T:Cenium.Contacts.Activities.ResourceHelper.ContactResultHandler">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="T:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory.#ctor">
+            <summary>
+            Initializes a new instance of the ContactInfoResultHandlerFactory class
+            </summary>
+        </member>
+        <member name="M:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory.CreateHandler">
+             <summary>
+            
+             </summary>
+             <returns></returns>
         </member>
     </members>
 </doc>

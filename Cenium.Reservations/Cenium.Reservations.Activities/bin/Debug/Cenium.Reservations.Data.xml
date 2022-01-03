@@ -9,9 +9,14 @@
             Explain the purpose of the class here
             </summary>
         </member>
-        <member name="P:Cenium.Reservations.Data.Reservation.Name">
+        <member name="P:Cenium.Reservations.Data.Reservation.ContactName">
             <summary>
             Not mapped queryable field to query by conference group number.
+            </summary>
+        </member>
+        <member name="P:Cenium.Reservations.Data.Reservation.DisplayDateEnd">
+            <summary>
+            Display date end used by date of birth date picker to disable registrating DOB into the future
             </summary>
         </member>
         <member name="P:Cenium.Reservations.Data.Reservation.TenantId">

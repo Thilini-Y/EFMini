@@ -28,3 +28,11 @@
 );
 
 #SetVersion([Cenium.Prices.Data.PricesEntitiesDbContext], [Prices], [0.0.0.1], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])
+
+
+#Version([0.0.0.2])
+
+alter table [dbo].[Prices_Prices] drop column HotelId;
+#AddColumn([Prices_Prices], [PropertyContextId], [bigint not null])
+
+#SetVersion([Cenium.Prices.Data.PricesEntitiesDbContext], [Prices], [0.0.0.2], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])

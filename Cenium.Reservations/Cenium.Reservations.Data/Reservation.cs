@@ -43,12 +43,17 @@ namespace Cenium.Reservations.Data
 
         private long _reservationId;
         private long _propertyContextId;
-        private long _reservationNumber;
+        private string _reservationNumber;
         private System.DateTime _checkInDate;
         private System.DateTime _checkOutDate;
         private string _status;
         private long _roomId;
         private long _contactId;
+        private string _name;
+        private string _roomTypeName;
+        private string _roomNumber;
+        private Nullable<decimal> _price;
+        private string _paymentStatus;
         private Guid _tenantId = Guid.Empty;
 
         #endregion
@@ -65,7 +70,7 @@ namespace Cenium.Reservations.Data
             set { _reservationId = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 1, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual long PropertyContextId
         {
@@ -73,9 +78,8 @@ namespace Cenium.Reservations.Data
             set { _propertyContextId = value; }
         }
 
-        [Required]
         [EntityMember(IsReadOnly = false, Order = 2, IsPrivate = false, IsQueryable = true, IsSortable = true)]
-        public virtual long ReservationNumber
+        public virtual string ReservationNumber
         {
             get { return _reservationNumber; }
             set { _reservationNumber = value; }
@@ -99,7 +103,6 @@ namespace Cenium.Reservations.Data
             set { _checkOutDate = value; }
         }
 
-        [Required]
         [EntityMember(IsReadOnly = false, Order = 5, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual string Status
         {
@@ -107,7 +110,7 @@ namespace Cenium.Reservations.Data
             set { _status = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 6, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual long RoomId
         {
@@ -115,12 +118,49 @@ namespace Cenium.Reservations.Data
             set { _roomId = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 7, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual long ContactId
         {
             get { return _contactId; }
             set { _contactId = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 8, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+
+        [Required]
+        [EntityMember(IsReadOnly = false, Order = 9, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string RoomTypeName
+        {
+            get { return _roomTypeName; }
+            set { _roomTypeName = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 10, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string RoomNumber
+        {
+            get { return _roomNumber; }
+            set { _roomNumber = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 11, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual Nullable<decimal> Price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 12, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string PaymentStatus
+        {
+            get { return _paymentStatus; }
+            set { _paymentStatus = value; }
         }
 
 
@@ -132,7 +172,7 @@ namespace Cenium.Reservations.Data
         /// <summary>
         /// Tenant identifier, for internal framework usage only
         /// </summary>
-        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 8, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 13, IsQueryable = false, IsSortable = false)]
         public virtual Guid TenantId
         {
             get { return _tenantId; }
@@ -144,7 +184,7 @@ namespace Cenium.Reservations.Data
         /// </summary>
         [Timestamp]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [EntityMember(IsReadOnly = true, Order = 9, IsHidden = true, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, Order = 14, IsHidden = true, IsQueryable = false, IsSortable = false)]
         public virtual byte[] RowVersion
         {
             get;

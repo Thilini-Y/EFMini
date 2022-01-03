@@ -24,21 +24,6 @@
             Date filter
             </summary>
         </member>
-        <member name="T:Cenium.Rooms.Activities.Entities.Reservation">
-            <summary>
-            Explain the purpose of the class here
-            </summary>
-        </member>
-        <member name="M:Cenium.Rooms.Activities.Entities.Reservation.#ctor">
-            <summary>
-            Initializes a new instance of the ReservationResult class
-            </summary>
-        </member>
-        <member name="P:Cenium.Rooms.Activities.Entities.Reservation.RoomId">
-            <summary>
-            Date filter
-            </summary>
-        </member>
         <member name="T:Cenium.Rooms.Activities.Entities.ReservationResult">
             <summary>
             Explain the purpose of the class here
@@ -47,6 +32,31 @@
         <member name="P:Cenium.Rooms.Activities.Entities.ReservationResult.Items">
             <summary>
             List of items.
+            </summary>
+        </member>
+        <member name="T:Cenium.Rooms.Activities.Reservation">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
+        <member name="M:Cenium.Rooms.Activities.Reservation.#ctor">
+            <summary>
+            Initializes a new instance of the ReservationResult class
+            </summary>
+        </member>
+        <member name="P:Cenium.Rooms.Activities.Reservation.RoomNumber">
+            <summary>
+            Date filter
+            </summary>
+        </member>
+        <member name="P:Cenium.Rooms.Activities.Reservation.RoomTypeName">
+            <summary>
+            Date filter
+            </summary>
+        </member>
+        <member name="P:Cenium.Rooms.Activities.Reservation.Status">
+            <summary>
+            Date filter
             </summary>
         </member>
         <member name="T:Cenium.Rooms.Activities.FeaturesActivity">
@@ -147,6 +157,11 @@
             Initializes a new instance of the ReservationHelper class
             </summary>
         </member>
+        <member name="M:Cenium.Rooms.Activities.Helpers.Reservations.ReservationHelper.GetReservationDetails(System.Int64)">
+            <summary>
+            Initializes a new instance of the ReservationHelper class
+            </summary>
+        </member>
         <member name="T:Cenium.Rooms.Activities.Helpers.Reservations.DateEntityProxy">
             <summary>
             Explain the purpose of the class here
@@ -214,6 +229,13 @@
             <param name="roomId">The key for Room</param>
             <returns>A Room instance, or null if there is no entities with the given key</returns>
         </member>
+        <member name="M:Cenium.Rooms.Activities.RoomActivity.GetByRoomNumber(System.String)">
+            <summary>
+            Gets a Room instance from the datastore based on Room keys.
+            </summary>
+            <param name="roomNumber">The key for Room</param>
+            <returns>A Room instance, or null if there is no entities with the given key</returns>
+        </member>
         <member name="M:Cenium.Rooms.Activities.RoomActivity.Create(Cenium.Rooms.Data.Room)">
             <summary>
             Adds a new instance of Room to the data store
@@ -234,11 +256,11 @@
             </summary>
             <param name="room">The instance to delete</param>
         </member>
-        <member name="M:Cenium.Rooms.Activities.RoomActivity.AvailableRoomIds(Cenium.Rooms.Activities.Entities.DateEntity)">
+        <member name="M:Cenium.Rooms.Activities.RoomActivity.AvailableRooms(System.Int64)">
             <summary>
-            Activity query method that returns an IEnumerable&lt;Reservation&gt; instance. 
+            Activity query method that returns an IEnumerable&lt;Room&gt; instance. 
             </summary>
-            <param name="dates">The instance to delete</param>
+            <param name="reservationId">The instance to delete</param>
             <returns>A strongly type IEnumerable instance </returns>
         </member>
         <member name="M:Cenium.Rooms.Activities.RoomActivity.GetFromDatastore(System.Int64)">

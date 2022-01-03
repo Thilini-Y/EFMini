@@ -20,5 +20,5 @@ using Cenium.Framework.Data;
 
 [assembly: Component("Rooms")]
 
-[assembly: ModelVersion("0.0.0.3")]
+[assembly: ModelVersion("0.0.0.13")]
 

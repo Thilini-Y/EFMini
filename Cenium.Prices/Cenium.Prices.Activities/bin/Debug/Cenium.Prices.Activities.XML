@@ -41,6 +41,13 @@
             <param name="priceId">The key for Price</param>
             <returns>A Price instance, or null if there is no entities with the given key</returns>
         </member>
+        <member name="M:Cenium.Prices.Activities.PriceActivity.GetByCode(System.String)">
+            <summary>
+            Gets a Price instance from the datastore based on Price keys.
+            </summary>
+            <param name="priceCode">The key for Price</param>
+            <returns>A Price instance, or null if there is no entities with the given key</returns>
+        </member>
         <member name="M:Cenium.Prices.Activities.PriceActivity.Create(Cenium.Prices.Data.Price)">
             <summary>
             Adds a new instance of Price to the data store

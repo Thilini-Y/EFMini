@@ -2,6 +2,8 @@
 <metadata>
   <enumerations>
     <!--<enumeration id="mycomponent.enumeration.myenum" values="1=One^2=Two^3=Three" />-->
+    <enumeration id="contacts.enum.roomstatus" values="Created^Confirm^CheckedIn^CheckedOut^Cancel" />
+
   </enumerations>
 
 
@@ -23,6 +25,14 @@
         </extension>
       </extensions>
     </entity>-->
+
+    <entity id="Reservations.Reservation">
+      <properties>
+        <property id="CheckInDate" value="$SYSDATE$" />
+        <property id="CheckOutDate" value="$SYSDATE$" />
+      </properties>
+      
+    </entity>
 
   </entities>
 

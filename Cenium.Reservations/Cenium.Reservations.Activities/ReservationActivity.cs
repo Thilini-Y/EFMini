@@ -26,6 +26,7 @@ using Cenium.Framework.Security;
 using Cenium.Reservations.Activities.Helpers.Contacts;
 using Cenium.Reservations.Activities.Helpers.Room;
 using Cenium.Reservations.Activities.Entity;
+using Cenium.Reservations.Activities.Helpers.Price;
 
 namespace Cenium.Reservations.Activities
 {
@@ -95,7 +96,7 @@ namespace Cenium.Reservations.Activities
 
             ContactProxy contact_proxy = new ContactProxy(ContactHelper.CreateContactProxy());
             var contactResult = ContactHelper.GetContactDetailsById(result.ContactId);
-            result.Name = contactResult.Name;
+            result.ContactName = contactResult.Name;
             result.IdNumber = contactResult.IdNumber;
             return Logger.TraceMethodExit(result) as Reservation;
         }
@@ -111,6 +112,57 @@ namespace Cenium.Reservations.Activities
         public Cenium.Reservations.Data.Reservation Create(Reservation reservation)
         {
             Logger.TraceMethodEnter(reservation);
+
+            //assign reservation ststus
+            reservation.Status = "Created";
+
+            //assign payment status
+            reservation.PaymentStatus = "NotPaid";
+
+
+            //calculate charging price
+            if (reservation.CheckOutDate > reservation.CheckInDate)
+            {
+                int wholeDays = (reservation.CheckOutDate - reservation.CheckInDate).Days;
+
+                var priceResult = PriceHelper.GetPriceDetailsByCode(reservation.RoomTypeName);
+
+                decimal roomPrice = priceResult.ChargingPrice;
+
+                reservation.Price = roomPrice * wholeDays;
+
+
+            }
+            else
+            {
+                return null;
+            }
+
+            //generate reservation number
+            var items = _ctx.Reservations.ReadOnlyQuery().OrderByDescending(p => p.ReservationNumber);
+
+            if (items != null)
+            {
+                IEnumerable<Reservation> reservationNumberList = items.ToList();
+
+                string maxReservationNumber = reservationNumberList.FirstOrDefault().ReservationNumber;
+
+                maxReservationNumber = maxReservationNumber.Remove(0, 2);
+
+                string newReservationNumber = string.Format("RE{0:000000}", long.Parse(maxReservationNumber) + 1);
+
+                reservation.ReservationNumber = newReservationNumber;
+
+
+            }
+
+            else
+            {
+                string newReservationNumber = string.Format("RE{0:000000}", 1);
+
+                reservation.ReservationNumber = newReservationNumber;
+            }
+
 
             reservation = _ctx.Reservations.Add(reservation);
             _ctx.SaveChanges();
@@ -130,8 +182,61 @@ namespace Cenium.Reservations.Activities
         {
             Logger.TraceMethodEnter(reservation);
 
+            if (reservation.RoomNumber != null )
+            {
+                //get RoomId
+                var roomResult = RoomHelper.GetRoomDetailsByRoomumber(reservation.RoomNumber);
+                reservation.RoomId = roomResult.RoomId;
+            }
+
+            //calculate charging price
+            if (reservation.CheckOutDate > reservation.CheckInDate)
+            {
+                int wholeDays = (reservation.CheckOutDate - reservation.CheckInDate).Days;
+
+                var priceResult = PriceHelper.GetPriceDetailsByCode(reservation.RoomTypeName);
+
+                decimal roomPrice = priceResult.ChargingPrice;
+
+                reservation.Price = roomPrice * wholeDays;
+               
+
+
+            }
+            else
+            {
+                return null;
+            }
+
+
+
             reservation = _ctx.Reservations.Modify(reservation);
             _ctx.SaveChanges();
+
+            return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
+        }
+
+        /// <summary>
+        /// Updates a Reservation instance in the data store
+        /// </summary>
+        /// <param name="reservation">The instance to update</param>
+        /// <returns>The updated instance</returns>
+        [ActivityMethod("Confirm", MethodType.Update, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Write)]
+        public Cenium.Reservations.Data.Reservation Confirm(Reservation reservation)
+        {
+            Logger.TraceMethodEnter(reservation);
+
+            reservation.Status = "Confirmed";
+
+            reservation = _ctx.Reservations.Modify(reservation);
+            _ctx.SaveChanges();
+
+            RoomProxy room_proxy = new RoomProxy();
+            room_proxy.RoomId = reservation.RoomId;
+            room_proxy.RoomStatus = "Assigned";
+
+            RoomHelper.ChangeRoomStatus(room_proxy);
 
             return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
         }
@@ -200,6 +305,26 @@ namespace Cenium.Reservations.Activities
             Logger.TraceMethodEnter(reservation);
 
             reservation.Status = "Cancel";
+
+            reservation = _ctx.Reservations.Modify(reservation);
+            _ctx.SaveChanges();
+
+            return Logger.TraceMethodExit(GetFromDatastore(reservation.ReservationId)) as Reservation;
+        }
+
+
+        /// <summary>
+        /// Updates a Reservation instance in the data store
+        /// </summary>
+        /// <param name="reservation">The instance to update</param>
+        /// <returns>The updated instance</returns>
+        [ActivityMethod("Paid", MethodType.Update, IsDefault = true)]
+        [SecureResource("reservation.administration", SecureResourcePermissionLevel.Write)]
+        public Cenium.Reservations.Data.Reservation Paid(Reservation reservation)
+        {
+            Logger.TraceMethodEnter(reservation);
+
+            reservation.PaymentStatus = "Paid";
 
             reservation = _ctx.Reservations.Modify(reservation);
             _ctx.SaveChanges();

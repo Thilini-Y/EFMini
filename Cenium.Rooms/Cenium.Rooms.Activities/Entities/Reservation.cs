@@ -18,7 +18,7 @@
 using Cenium.Framework.Data;
 using System;
 
-namespace Cenium.Rooms.Activities.Entities
+namespace Cenium.Rooms.Activities
 {
     /// <summary>
     /// Explain the purpose of the class here
@@ -38,7 +38,19 @@ namespace Cenium.Rooms.Activities.Entities
         /// Date filter
         /// </summary>
         [EntityMember(Order = 0)]
-        public long RoomId { get; set; }
+        public string RoomNumber { get; set; }
+
+        /// <summary>
+        /// Date filter
+        /// </summary>
+        [EntityMember(Order = 1)]
+        public string RoomTypeName { get; set; }
+
+        /// <summary>
+        /// Date filter
+        /// </summary>
+        [EntityMember(Order = 2)]
+        public string Status { get; set; }
     }
 
 }
