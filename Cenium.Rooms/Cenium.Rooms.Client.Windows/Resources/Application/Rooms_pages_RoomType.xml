@@ -194,7 +194,7 @@
 
 
        <action id="managefeatures" label="Manage Features" description="Manage features for the selected room type." type="framework.EditDialogAction"
-                displayType="#home" group="Actions"  icon="" iconSize="Large">
+                displayType="#home" group="Actions"  icon="backoffice.icon.action.roomtype.managefeatures" iconSize="Large">
          <properties>
            <property id="DialogId" value="rooms.dlg.roomtype.roomfeatures" />
            <property id="ActionMethod" value="Rooms/RoomType/Update" />

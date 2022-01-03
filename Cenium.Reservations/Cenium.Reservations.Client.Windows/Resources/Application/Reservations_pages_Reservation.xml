@@ -239,31 +239,31 @@
           </properties>
         </action>
 
-        <action id="confirm" label="Confirm" description="Confirm" type="frontdesk.confirmaction" icon="" group="#actions" iconSize="Small">
+        <action id="confirm" label="Confirm" description="Confirm" type="frontdesk.confirmaction" icon="frontdesk.icon.action.reservation.confirm" group="#actions" iconSize="Small">
           <conditions>
             <condition property="Status" operator="In" value="Created" />
           </conditions>
         </action>
 
-        <action id="checkin" label="Check In" description="Check In" type="frontdesk.checkinaction" icon="" group="#actions" iconSize="Small">
+        <action id="checkin" label="Check In" description="Check In" type="frontdesk.checkinaction" icon="frontdesk.icon.action.reservation.checkin" group="#actions" iconSize="Small">
           <conditions>
             <condition property="Status" operator="In" value="Confirmed" />
           </conditions>
         </action>
 
-        <action id="checkout" label="Check Out" description="Check Out" type="frontdesk.checkoutaction" icon="" group="#actions" iconSize="Small">
+        <action id="checkout" label="Check Out" description="Check Out" type="frontdesk.checkoutaction" icon="frontdesk.icon.action.reservation.checkout" group="#actions" iconSize="Small">
           <conditions>
             <condition property="Status" operator="In" value="CheckedIn" />
           </conditions>
         </action>
 
-        <action id="cancel" label="Cancel" description="Cancel" type="frontdesk.cancelaction" icon="" group="#actions" iconSize="Small">
+        <action id="cancel" label="Cancel" description="Cancel" type="frontdesk.cancelaction" icon="frontdesk.icon.action.reservation.cancel" group="#actions" iconSize="Small">
           <conditions>
             <condition property="Status" operator="In" value="Created;Confirmed" />
           </conditions>
         </action>
 
-        <action id="payment" label="Paid" description="Payment Details" type="frontdesk.paymentaction" icon="" group="#actions" iconSize="Small">
+        <action id="payment" label="Payment" description="Payment Details" type="frontdesk.paymentaction" icon="frontdesk.icon.action.reservation.payment" group="#actions" iconSize="Small">
           <conditions>
             <condition property="PaymentStatus" operator="In" value="NotPaid" />
             

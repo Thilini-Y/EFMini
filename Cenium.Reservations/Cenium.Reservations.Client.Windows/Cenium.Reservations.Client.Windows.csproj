@@ -88,6 +88,7 @@
     <Compile Include="Actions\CheckOutAction.cs" />
     <Compile Include="Actions\ConfirmAction.cs" />
     <Compile Include="Actions\CheckInAction.cs" />
+    <Compile Include="ComponentControl.cs" />
     <Compile Include="Dependencies.cs" />
     <Compile Include="ReservationsClientInitializer.cs" />
     <Compile Include="NamespaceDoc.cs" />
@@ -113,6 +114,21 @@
     <EmbeddedResource Include="Resources\Application\Reservations_pages_Reservation.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\ActionCheckOut32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\ActionCheckIn32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\ActionCancel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\ActionConfirm32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\ActionPayment32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

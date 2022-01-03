@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\CleanAction.cs" />
+    <Compile Include="ComponentControl.cs" />
     <Compile Include="Dependencies.cs" />
     <Compile Include="RoomsClientInitializer.cs" />
     <Compile Include="NamespaceDoc.cs" />
@@ -121,7 +122,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icons\ManageCategories.png" />
+    <Resource Include="Resources\Icons\Actions\ManageCategories.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Actions\TapeChartCleanAndOccupied32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

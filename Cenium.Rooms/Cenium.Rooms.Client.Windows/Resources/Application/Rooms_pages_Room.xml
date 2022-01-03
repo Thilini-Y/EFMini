@@ -136,7 +136,7 @@
           </properties>
         </action>
 
-        <action id="clean" label="Clean" description="Clean Room" type="backoffice.cleanaction" icon="" group="#actions" iconSize="Small">
+        <action id="clean" label="Clean" description="Clean Room" type="backoffice.cleanaction" icon="backoffice.icon.action.room.clean" group="#actions" iconSize="Small">
           <conditions>
             <condition property="RoomStatus" operator="In" value="Assigned;Dirty" />
           </conditions>
