@@ -47,6 +47,15 @@ namespace Cenium.Contacts.Data
         private string _address;
         private bool _isActive;
         private Nullable<System.Guid> _profileImage;
+        private string _contactNumber;
+        private string _firstName;
+        private string _middleName;
+        private string _lastName;
+        private string _city;
+        private string _province;
+        private string _country;
+        private string _zipCode;
+        private string _gender;
         private ICollection<Email> _emails;
         private ICollection<PhoneNumber> _phoneNumbers;
         private Guid _tenantId = Guid.Empty;
@@ -98,7 +107,7 @@ namespace Cenium.Contacts.Data
             set { _address = value; }
         }
 
-        [Required]
+        
         [EntityMember(IsReadOnly = false, Order = 5, IsPrivate = false, IsQueryable = true, IsSortable = true)]
         public virtual bool IsActive
         {
@@ -113,20 +122,83 @@ namespace Cenium.Contacts.Data
             set { _profileImage = value; }
         }
 
+        [EntityMember(IsReadOnly = false, Order = 7, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string ContactNumber
+        {
+            get { return _contactNumber; }
+            set { _contactNumber = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 8, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 9, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string MiddleName
+        {
+            get { return _middleName; }
+            set { _middleName = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 10, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 11, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string City
+        {
+            get { return _city; }
+            set { _city = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 12, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string Province
+        {
+            get { return _province; }
+            set { _province = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 13, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string Country
+        {
+            get { return _country; }
+            set { _country = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 14, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string ZipCode
+        {
+            get { return _zipCode; }
+            set { _zipCode = value; }
+        }
+
+        [EntityMember(IsReadOnly = false, Order = 15, IsPrivate = false, IsQueryable = true, IsSortable = true)]
+        public virtual string Gender
+        {
+            get { return _gender; }
+            set { _gender = value; }
+        }
+
 
         #endregion
 
 
         #region Navigation Properties
 
-        [EntityMember(IsReadOnly = false, Order = 7)]
+        [EntityMember(IsReadOnly = false, Order = 16)]
         public virtual ICollection<Email> Emails
         {
             get { return _emails; }
             set { _emails = value; }
         }
 
-        [EntityMember(IsReadOnly = false, Order = 8)]
+        [EntityMember(IsReadOnly = false, Order = 17)]
         public virtual ICollection<PhoneNumber> PhoneNumbers
         {
             get { return _phoneNumbers; }
@@ -142,7 +214,7 @@ namespace Cenium.Contacts.Data
         /// <summary>
         /// Tenant identifier, for internal framework usage only
         /// </summary>
-        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 9, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, IsHidden = true, Order = 18, IsQueryable = false, IsSortable = false)]
         public virtual Guid TenantId
         {
             get { return _tenantId; }
@@ -154,7 +226,7 @@ namespace Cenium.Contacts.Data
         /// </summary>
         [Timestamp]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [EntityMember(IsReadOnly = true, Order = 10, IsHidden = true, IsQueryable = false, IsSortable = false)]
+        [EntityMember(IsReadOnly = true, Order = 19, IsHidden = true, IsQueryable = false, IsSortable = false)]
         public virtual byte[] RowVersion
         {
             get;

@@ -23,6 +23,7 @@ using Cenium.Framework.Core.Attributes;
 using Cenium.Framework.Logging;
 using Cenium.Contacts.Data;
 using Cenium.Framework.Security;
+using Cenium.Framework.Data;
 
 namespace Cenium.Contacts.Activities
 {
@@ -109,10 +110,49 @@ namespace Cenium.Contacts.Activities
         {
             Logger.TraceMethodEnter(contact);
 
+            //generate reservation number
+            var items = _ctx.Contacts.ReadOnlyQuery().OrderByDescending(p => p.ContactNumber);
+
+            if (items != null)
+            {
+                IEnumerable<Contact> contactNumberList = items.ToList();
+
+                string maxContactNumber = contactNumberList.FirstOrDefault().ContactNumber;
+
+                maxContactNumber = maxContactNumber.Remove(0, 2);
+
+                string newContactNumber = string.Format("CN{0:000000}", long.Parse(maxContactNumber) + 1);
+
+                contact.ContactNumber = newContactNumber;
+
+
+            }
+
+            else
+            {
+                string newContactNumber = string.Format("CN{0:000000}", 1);
+
+                contact.ContactNumber = newContactNumber;
+            }
+
+
             _ctx.Contacts.AttachChildCollection<Email>(contact, "Emails");
             _ctx.Contacts.AttachChildCollection<PhoneNumber>(contact, "PhoneNumbers");
+
+
+            if (contact.ProfileImage == null || contact.ProfileImage == Guid.Empty)
+            {
+                contact.ProfileImage = Guid.NewGuid();
+            }
+      
+
             contact = _ctx.Contacts.Add(contact);
             _ctx.SaveChanges();
+
+
+            ImageStorageManager.Claim(contact.ProfileImage.Value);
+
+
 
             return Logger.TraceMethodExit(GetFromDatastore(contact.ContactId)) as Contact;
         }
@@ -131,10 +171,18 @@ namespace Cenium.Contacts.Activities
         {
             Logger.TraceMethodEnter(contact);
 
+            if (contact.ProfileImage == null || contact.ProfileImage == Guid.Empty)
+            {
+                contact.ProfileImage = Guid.NewGuid();
+            }
+
             _ctx.Contacts.AttachChildCollection<Email>(contact, "Emails");
             _ctx.Contacts.AttachChildCollection<PhoneNumber>(contact, "PhoneNumbers");
             contact = _ctx.Contacts.Modify(contact);
             _ctx.SaveChanges();
+
+            ImageStorageManager.Claim(contact.ProfileImage.Value);
+
 
             return Logger.TraceMethodExit(GetFromDatastore(contact.ContactId)) as Contact;
         }

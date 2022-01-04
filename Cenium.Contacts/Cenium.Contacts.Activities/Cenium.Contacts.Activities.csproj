@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Component.cs" />
     <Compile Include="ContactActivity.cs" />
+    <Compile Include="ContactTermsLoader.cs" />
     <Compile Include="Dependencies.cs" />
     <Compile Include="EmailActivity.cs" />
     <Compile Include="Entities\Extensions\ContactReservationExtension.cs" />
@@ -89,12 +90,11 @@
     <Compile Include="PhoneNumberActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceHelper\ContactResultHandler.cs" />
-    <Compile Include="ResourceHelper\ReservationResultHelper.cs" />
+    <Compile Include="ResourceHelper\ReservationResultHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>SET DST_DIR=C:\inetpub\wwwroot\EFMini\bin
