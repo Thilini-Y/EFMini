@@ -2,6 +2,7 @@
 <metadata>
   <enumerations>
     <!--<enumeration id="mycomponent.enumeration.myenum" values="1=One^2=Two^3=Three" />-->
+    <enumeration id="contacts.enumeration.genderenum" values="Male^Female^Other" />
   </enumerations>
 
 
@@ -23,6 +24,81 @@
         </extension>
       </extensions>
     </entity>-->
+
+
+    <entity id="Contacts.Contact">
+      <properties>
+        <property id="DOB" value="$SYSDATE$" />
+        <property id="ContactNumber" value="Auto" />
+        <property id="ProfileImage" value="$GUID$" />
+      </properties>
+      
+      <extensions>
+
+        <extension property="AgeYears" type="CodeExtension" >
+          <parameters>
+            <parameter id="Source" >
+              <![CDATA[
+            if (record == null) 
+              return null;
+            
+            string DateOfBirth = "DOB";
+            DateTime dob = record.GetValue<DateTime>(DateOfBirth);
+            DateTime today = DateTime.Today;
+            int months = today.Month - dob.Month;
+            int years = today.Year - dob.Year;
+
+            if (today.Day < dob.Day)
+            {
+                months--;
+            }
+
+            if (months < 0)
+            {
+                years--;
+                months += 12;
+            }
+            return years.ToString();
+            
+            ]]>
+            </parameter>
+          </parameters>
+        </extension>
+        
+
+        <extension property="AgeMonths" type="CodeExtension" >
+          <parameters>
+            <parameter id="Source" >
+              <![CDATA[
+            if (record == null) 
+              return null;
+            
+            string DateOfBirth = "DOB";
+            DateTime dob = record.GetValue<DateTime>(DateOfBirth);
+            DateTime today = DateTime.Today;
+            int months = today.Month - dob.Month;
+            int years = today.Year - dob.Year;
+
+            if (today.Day < dob.Day)
+            {
+                months--;
+            }
+
+            if (months < 0)
+            {
+                years--;
+                months += 12;
+            }
+            return months.ToString();
+            
+            ]]>
+            </parameter>
+          </parameters>
+        </extension>
+
+      </extensions>
+      
+    </entity>
 
   </entities>
 

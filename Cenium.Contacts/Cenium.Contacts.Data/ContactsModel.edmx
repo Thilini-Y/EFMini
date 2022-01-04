@@ -37,6 +37,15 @@
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PhoneNumbers" Relationship="ContactsModel.ContactPhoneNumber" FromRole="Contact" ToRole="PhoneNumber" />
           <Property Name="ProfileImage" Type="Guid" Nullable="true" />
+          <Property Name="ContactNumber" Type="String" Nullable="true" />
+          <Property Name="FirstName" Type="String" Nullable="true" />
+          <Property Name="MiddleName" Type="String" Nullable="true" />
+          <Property Name="LastName" Type="String" Nullable="true" />
+          <Property Name="City" Type="String" Nullable="true" />
+          <Property Name="Province" Type="String" Nullable="true" />
+          <Property Name="Country" Type="String" Nullable="true" />
+          <Property Name="ZipCode" Type="String" Nullable="true" />
+          <Property Name="Gender" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Email">
           <Key>

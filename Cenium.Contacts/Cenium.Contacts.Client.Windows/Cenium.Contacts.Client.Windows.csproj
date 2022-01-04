@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="ContactsClientInitializer.cs" />
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Extentions\AgeYearsEntityExtension.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -92,7 +93,9 @@
     <!--<AppDesigner Include="Properties\" />-->
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Application\Contacts_metadata.xml" />
+    <EmbeddedResource Include="Resources\Application\Contacts_metadata.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Application\Contacts_navigator.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

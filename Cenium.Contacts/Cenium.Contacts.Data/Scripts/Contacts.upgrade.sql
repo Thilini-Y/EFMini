@@ -58,3 +58,18 @@ alter table [dbo].[Contacts_Emails] add constraint [Email_Contact] foreign key (
 
 
 #SetVersion([Cenium.Contacts.Data.ContactsEntitiesDbContext], [Contacts], [0.0.0.3], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])
+
+
+#Version([0.0.0.4])
+
+ #AddColumn([Contacts_Contacts], [ContactNumber], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [FirstName], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [MiddleName], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [LastName], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [City], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [Province], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [Country], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [ZipCode], [nvarchar(255) null])
+ #AddColumn([Contacts_Contacts], [Gender], [nvarchar(255) null])
+
+#SetVersion([Cenium.Contacts.Data.ContactsEntitiesDbContext], [Contacts], [0.0.0.4], [D6730250496FD32AE0DA18B2B509E96F110F83848EA3C2E468E298EFF9E9BB32])

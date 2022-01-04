@@ -11,23 +11,40 @@
  * 
  * User        Date          Comment
  * ----------- ------------- --------------------------------------------------------------------------------------------
- * Thilini.Y   12/23/2021    Created
+ * Thilini.Y   12/31/2021    Created
  */
 
 
 using Cenium.Framework.Data;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cenium.Contacts.Data
 {
     /// <summary>
     /// Explain the purpose of the class here
     /// </summary>
-    [EntityInfo(ValueListProperties = "Name,IdNumber,DOB,Address", PrimaryDisplayProperty = "Name")]
+    [EntityInfo(ValueListProperties = "ContactNumber,Name,DOB,IdNumber,Address", PrimaryDisplayProperty = "Name")]
     public partial class Contact
     {
 
-       
+        /// <summary>
+        /// Initializes a new instance of the Contact class
+        /// </summary>
+        public Contact()
+        {
+
+        }
+
+        /// <summary>
+        /// Display date end used by date of birth date picker to disable registrating DOB into the future
+        /// </summary>
+        [NotMapped]
+        [EntityMember(IsReadOnly = false, IsSortable = false, IsQueryable = false, Order = 101)]
+        public virtual DateTime DisplayDateEnd
+        {
+            get { return DateTime.Now; }
+        }
 
     }
 

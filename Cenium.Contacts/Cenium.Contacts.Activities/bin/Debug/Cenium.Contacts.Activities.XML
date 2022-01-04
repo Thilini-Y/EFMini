@@ -68,6 +68,11 @@
             Releases all resources used by this ContactActivity instance.
             </summary>
         </member>
+        <member name="T:Cenium.Contacts.Activities.ContactTermsLoader">
+            <summary>
+            Explain the purpose of the class here
+            </summary>
+        </member>
         <member name="T:Cenium.Contacts.Activities.EmailActivity">
             <summary>
             The EmailActivity class is an activity class that exposes data operation methods to the service layer. This class is responsible for applying business logic prior to making
@@ -231,26 +236,10 @@
             Releases all resources used by this PhoneNumberActivity instance.
             </summary>
         </member>
-        <member name="T:Cenium.Contacts.Activities.ResourceHelper.ContactResultHandler">
+        <member name="M:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandler.#ctor">
             <summary>
-            Explain the purpose of the class here
+            Initializes a new instance of the ContactReservationExtension class
             </summary>
-        </member>
-        <member name="T:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory">
-            <summary>
-            Explain the purpose of the class here
-            </summary>
-        </member>
-        <member name="M:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory.#ctor">
-            <summary>
-            Initializes a new instance of the ContactInfoResultHandlerFactory class
-            </summary>
-        </member>
-        <member name="M:Cenium.Contacts.Activities.ResourceHelper.ReservationResultHandlerFactory.CreateHandler">
-             <summary>
-            
-             </summary>
-             <returns></returns>
         </member>
     </members>
 </doc>

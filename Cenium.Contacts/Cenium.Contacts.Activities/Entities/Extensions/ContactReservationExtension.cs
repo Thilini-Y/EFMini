@@ -24,8 +24,7 @@ namespace Cenium.Contacts.Activities.Entities.Extensions
     /// <summary>
     /// Explain the purpose of the class here
     /// </summary>
-    [Entity]
-    public class ContactReservationExtension
+	public class ContactReservationExtension
     {
 
         /// <summary>
@@ -35,7 +34,6 @@ namespace Cenium.Contacts.Activities.Entities.Extensions
         {
 
         }
-
 
         /// <summary>
         ///

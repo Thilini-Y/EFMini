@@ -11,28 +11,28 @@
  * 
  * User        Date          Comment
  * ----------- ------------- --------------------------------------------------------------------------------------------
- * Thilini.Y   12/17/2021    Created
+ * Thilini.Y   12/31/2021    Created
  */
 
 
-using Cenium.Contacts.Data;
-using Cenium.Framework.Activities;
+using Cenium.Framework.Language;
 using System;
 
-namespace Cenium.Contacts.Activities.ResourceHelper
+namespace Cenium.Contacts.Activities
 {
-
     /// <summary>
     /// Explain the purpose of the class here
     /// </summary>
-    //internal abstract class ContactResultHandler : AbstractContextActivityResultHandler<ContactsEntitiesContext>
-    //{
+	internal static class ContactTermsLoader
+    {
+        public const string TermContactFirstMiddleLast = "@contacts.firstmiddlelast";
 
-    //    protected override ContactsEntitiesContext CreateContext()
-    //    {
-    //        return new ContactsEntitiesContext();
-    //    }
+        internal static void ContactTermLoadImpl(TermCollection collection)
+        {
+            collection.Add(TermContactFirstMiddleLast, "First/Middle/Last");
+        }
 
-    //}
+
+    }
 
 }

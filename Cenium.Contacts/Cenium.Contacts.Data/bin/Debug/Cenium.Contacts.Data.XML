@@ -19,6 +19,16 @@
             Concurrency control version number
             </summary>
         </member>
+        <member name="M:Cenium.Contacts.Data.Contact.#ctor">
+            <summary>
+            Initializes a new instance of the Contact class
+            </summary>
+        </member>
+        <member name="P:Cenium.Contacts.Data.Contact.DisplayDateEnd">
+            <summary>
+            Display date end used by date of birth date picker to disable registrating DOB into the future
+            </summary>
+        </member>
         <member name="T:Cenium.Contacts.Data.ContactsEntitiesContext">
             <summary>
             Provides facilities for querying and working with entities as objects
